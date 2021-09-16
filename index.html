@@ -1,0 +1,138 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ideal European Holiday</title>
+  </head>
+  <body>
+    <div id="hero">
+     <nav>
+        <h2>EUROHOL</h2>
+        <div>
+          <ul>
+            <li href="#">Home</a></li>
+            <li href="#">About</a></li>
+            <li href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div>
+      <h1>Find your Ideal European Holiday Here!</h1>
+      <h4">Find your perfect City Break, Skiing and Beach Holiday</h4>
+    </div>
+    <div>
+      <br>
+      <p id="site_info">
+          When map of country appears with resort/hotel markers - user can click on- to check infoWindow - if he likes the country options then
+          he clicks on book button.  Use the dropdown below to select type of holiday you woould like in Europe.
+      </p>
+    </div>
+    <section id="country_section">
+      <div class="container">
+        <br>
+        <div id="select_hol">
+          <br>
+          <br>
+          <br>
+          <label for="country">Choose Holiday type:</label>
+          <select name="hol_picked" id="hol_picked" onchange="enablebutton()">
+          <!--<select name="hol_picked" id="hol_picked">-->
+            <option value="Skiing">Skiing</option>
+            <option value="Beach">Beach</option>
+            <option value="City">City Tour</option>
+          </select>
+          <button id="hol_btn">Get info</button>
+        </div>
+        <br>
+        <div>
+            <div id="country1">
+            </div>
+            <br>
+            <div id="map1"></div>
+            <div id="button1"></div>
+            <br>
+            <div id="country2">
+            </div>
+            <br>
+            <div id="map2"></div>
+            <div id="button2"></div>
+            <br>
+            <div id="country3">
+            </div>
+            <br>
+            <div id="map3"></div>
+            <div id="button3"></div>
+            <br>
+            <div id="desktop_container">
+              <div id="map_desktop"></div>
+              <div id="book_button"></div>
+            </div>
+            <br>
+            <div id="country4">
+            </div>
+            <br>
+            <div id="map4"></div>
+            <div id="button4"></div>
+            <br>
+            <div id="country5">
+            </div>
+            <br>
+            <div id="map5"></div>
+            <div id="button5"></div>
+            <br>
+            </div>
+       </div>
+
+  </section>
+  <section id="booking_form">
+    <form>
+       <label for="name">Name:</label>
+       <input type="text" id=name>
+       <br>
+       <label for="resort">Choose Resort:</label>
+       <select name="hol_picked" id="resort">
+       </select>
+       <br>
+       <label for="airlines">Choose Airline:</label>
+       <select name="airline_picked" id="airlines" style="width: 150px;">
+       </select>
+       <br>
+    </form>
+  </section>
+  <Section>
+  <div id="About">
+    <h2>ABOUT US</h2>
+  </div>
+  <div id="site_design">
+    <p>This my second project which is designed using <span><strong>html,css,bootstrap and javascript</strong></span></p>
+  </div>
+  <div id="external_res">
+    <p>The site also uses external resources like <span><strong>Google Map/Places api</strong></span> and also <span><strong>font awesome</strong></span></p>
+  </div>
+</Section>
+<Section>
+  <footer id="Contact">
+       <div class="footer-content">
+            <h3>Code institute Project2</h3>
+            <p>In Desktop mode after select a country - where map is generated when changing view/viewport to mobile view
+            this desktop map is appearing in the mobile it should not it should dissappear</p>
+
+             <ul class="social_media">
+               <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+               <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+               <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+               <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            </ul>
+         </div>
+         <div class="footer-bottom">
+              <p>copyright &copy;2021 designed by <span>DJM</span></p>
+
+          </div>
+    </footer>
+</Section>
+
+
+</body>
+</html>
