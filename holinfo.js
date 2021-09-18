@@ -74,10 +74,12 @@
   /*
   This function initialize() takes in params that will be used in the google map api and google places api
   */
-  function initialize(holtype,lat,lng,device_map,airlines_arr) {
+  function initialize(holtype,lat,lng,device_map,button_div,airlines_arr) { 
+
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
     var center = new google.maps.LatLng(lat,lng)
-    //var mapdiv = document.getElementById('map_desktop'); removed as using device_map (which maybe desktop ver or mobile ver)
+    
+    // device_map (which maybe desktop ver or mobile ver)
     map = new google.maps.Map(document.getElementById(device_map), {
       center: center,
       zoom: 7
@@ -94,10 +96,7 @@
     //also includes calling a callback function
     service.nearbySearch(request,callback);
 
-    /*mapdiv.style.display = "block";
-    mapdiv.style.height= "500px";
-    mapdiv.style.width= "800px";*/
-   
+
     var mapdiv = document.getElementById(device_map); //above link worked fix the map div to be visible
     var display_state = getComputedStyle(mapdiv).display;
 
@@ -120,13 +119,26 @@
 
 
     /* a condition to only create book button if it doesnt exist */ 
-    //if (btn === null){
-    if( (btn===null && device_map=="map_desktop") || (btn!=null && device_map!="map_desktop")) {
-
-      
+    if (btn === null){      
       btn = document.createElement("button");
       btn.innerHTML = "BOOK";
-      btn.onclick = function () {
+    }
+    if (display_state == "none" && device_map == "map_desktop") {
+        
+      var container = document.getElementById("book_button");//this is the desktop button div 
+      container.appendChild(btn);
+      console.log("IN END OF MAP INITIALIZE function device_map is  " + device_map);
+    }
+    else if (display_state == "none" && device_map != "map_desktop"){
+
+      console.log("IN END OF MAP INITIALIZE function device_map is  " + device_map);
+      var container_mobile =  document.getElementById(button_div); //since non desktop referencing mobile button div button1, button2 ... 
+      alert("new button created which is button" + button_div);
+      container_mobile.appendChild(btn);
+    }  
+
+
+    btn.onclick = function () {
         alert("You want to book a resort in " + place_info[0].name);
         //place_info=[];
         /*added here 15:20 today add code below where book button info  is moved to booking forms dropdown */
@@ -158,18 +170,15 @@
           ele.value = opts;
           airlines.appendChild(ele);
         }
-      //place_info=[];
+      
         window.location.href='#booking_form';
 
 
-      };
-
-
-      var container = document.getElementById('book_button');
-      container.appendChild(btn);
-    }
+    };
 
   }
+
+ 
   function callback(results,status){
 
     if(status == google.maps.places.PlacesServiceStatus.OK){
@@ -252,12 +261,12 @@
            radioYes.setAttribute("name", "mapselect");
            radioYes.setAttribute("value", place);
            
-           var map_div = "map" + map_num; //variable to be used to reference the map divs for mobile view on site page
-           
-           //radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+airlines_arr+"');");
-           
-           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+map_div +"','"+airlines_arr+"');");
+           var map_div = "map" + map_num; //variable to be used to reference the map divs for mobile view on site page to pass to country_map()
 
+           var button_div = "button" + map_num; //variable record button number eg button1, button2... to pass to country_map()
+
+           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+map_div +"','"+button_div +"','"+airlines_arr+"');");
+           
 
            var lblgenerateMap = document.createElement("lable");
            var textgenerateMap = document.createTextNode("select to generate Map");
@@ -299,7 +308,7 @@
  }
  
  /*This function will be used to call a function to google map api */ 
- function country_map(type_hol,selected_lat,selected_lng, map_div ,airlines_arr){
+  function country_map(type_hol,selected_lat,selected_lng, map_div, button_div ,airlines_arr){
     var device_view_map = "";
     //check the device views site is larger than mobile view then map div will be using the div map_desktop at center of screen 
     var query = window.matchMedia("(min-width: 601px)");
@@ -313,7 +322,6 @@
     console.log("device_view_map is: " + device_view_map);
 
   // this passes the info here to a function which prepares a call to function which will use google map api and google places api
-  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng,device_view_map ,airlines_arr));
-
+  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng,device_view_map, button_div ,airlines_arr));
 
 }
