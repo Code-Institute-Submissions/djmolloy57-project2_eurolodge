@@ -8,6 +8,8 @@
         display_country_info(hol_picked.value); //holiday type picked from dropdown to pass to display_country_info Function to display relevant countres
    };
    
+
+   var place_info = [];
    //Javascript object with all holiday parameters in key value pairs to be reference
    //by function display_country_info() to create dom elements to dispplay on the site page
    //like holiday images and co-ordinates latitute and longtitude to be passed into Google Maps/places api
@@ -63,6 +65,75 @@
       ]
     }
   }; 
+  /*
+  This function initialize() takes in params that will be used in the google map api and google places api
+  */
+  function initialize(holtype,lat,lng) {
+    console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
+    var center = new google.maps.LatLng(lat,lng)
+    var mapdiv = document.getElementById('map_desktop');
+    map = new google.maps.Map(mapdiv, {
+      center: center,
+      zoom: 7
+    });
+    var request = {
+      location: center,
+      radius: 1200047, //500 miles
+      keyword: holtype
+    };
+
+    //creates the google places api object by passing in the google map object
+    var service = new google.maps.places.PlacesService(map);
+    //then using the google places api object calls its nearbySearch method with params request key value pairs (hol_type, radius and plot from center)
+    //also includes calling a callback function
+    service.nearbySearch(request,callback);
+
+    mapdiv.style.display = "block";
+    mapdiv.style.height= "500px";
+    mapdiv.style.width= "800px";
+    var btn = document.createElement("button");
+    btn.innerHTML = "BOOK";
+    btn.onclick = function () {
+      alert("You want to book a resort in " + place_info[0].name);
+      place_info=[];
+    };
+    var container = document.getElementById('book_button');
+    container.appendChild(btn);
+
+  }
+  function callback(results,status){
+
+    if(status == google.maps.places.PlacesServiceStatus.OK){
+      for (var i = 0; i < results.length; i++){
+        createMarker(results[i]);
+        place_info.push(results[i]);
+
+      }
+    }
+    console.log("callback assigned into array index 0: " + place_info[0].name);
+
+  }
+
+  function placedetailalert(markerplace)
+  {
+    return markerplace;
+  }
+
+  function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+    if(place){
+      var infoWindow = new google.maps.InfoWindow({
+        content: 'Name: ' + place.name + '. Address: ' + place.vicinity + '. RATING: ' + place.rating + '. Business Status: ' + place.business_status
+
+      });
+    }
+
+  }
+
   
 
   /*This function receives the holiday parameter passed for the Choose Holiday drop
@@ -98,7 +169,11 @@
            radioYes.setAttribute("type", "radio");
            radioYes.setAttribute("name", "mapselect");
            radioYes.setAttribute("value", place);
-           radioYes.setAttribute("onclick","country_coord2('"+place+"','"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');")
+           //radioYes.setAttribute("onclick","country_coord2('"+place+"','"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');")
+           
+           //radio onclick event is bound to a function country_map which takes in params which will be used in call to google map api
+           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');");
+           
            var lblgenerateMap = document.createElement("lable");
            var textgenerateMap = document.createTextNode("select to generate Map");
            lblgenerateMap.appendChild(textgenerateMap);
@@ -114,6 +189,7 @@
            element.appendChild(tag);
            element.appendChild(radioYes);
            element.appendChild(lblgenerateMap);
+           
 
        }
     }
@@ -136,3 +212,8 @@
           alert("Selected radio button values is: " + getSelectedValue.value);
     }
  }
+ /*This function will be used to call a function to google map api */ 
+ function country_map(type_hol,selected_lat,selected_lng){
+  // this passes the info here to a function which prepares a call to function which will use google map api and google places api
+  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng));
+}
