@@ -8,8 +8,9 @@
         display_country_info(hol_picked.value); //holiday type picked from dropdown to pass to display_country_info Function to display relevant countres
    };
    
-
    var place_info = [];
+   var btn=null;
+   
    //Javascript object with all holiday parameters in key value pairs to be reference
    //by function display_country_info() to create dom elements to dispplay on the site page
    //like holiday images and co-ordinates latitute and longtitude to be passed into Google Maps/places api
@@ -91,14 +92,19 @@
     mapdiv.style.display = "block";
     mapdiv.style.height= "500px";
     mapdiv.style.width= "800px";
-    var btn = document.createElement("button");
-    btn.innerHTML = "BOOK";
-    btn.onclick = function () {
-      alert("You want to book a resort in " + place_info[0].name);
-      place_info=[];
-    };
-    var container = document.getElementById('book_button');
-    container.appendChild(btn);
+   
+    /* a condition to only create book button if it doesnt exist */ 
+    if (btn === null){
+
+      btn = document.createElement("button");
+      btn.innerHTML = "BOOK";
+      btn.onclick = function () {
+        alert("You want to book a resort in " + place_info[0].name);
+        place_info=[];
+      };
+      var container = document.getElementById('book_button');
+      container.appendChild(btn);
+    }
 
   }
   function callback(results,status){
