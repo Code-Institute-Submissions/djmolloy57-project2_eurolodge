@@ -23,6 +23,7 @@
             "content": "Andorra",
             "Hol_type": "ski",
             "info": "Andorra is a budget skiing region for young adults.There is no direct flights from Ireland.",
+            "airlines": ["Air France","Lufthansa","RyanAir"],
             "pic" : "assets/images/andorra2.jpg"
           }
        ],
@@ -32,6 +33,7 @@
            "content": "Austria",
            "Hol_type": "ski",
            "info": "Austria is a popular skiing region for families",
+           "airlines": ["Lauda Air","Lufthansa","RyanAir"],
            "pic" : "assets/images/austria1.jpg"
          }
        ],
@@ -41,6 +43,7 @@
             "content": "France",
             "Hol_type": "ski",
             "info": "France has popular skiing resorts with major town and cities within easy reach",
+            "airlines": ["Aer Lingus","Air France","RyanAir"],
             "pic" : "assets/images/france1.jpg"
         }
       ],
@@ -50,7 +53,8 @@
             "coords": { "lat": "41.8719","lng":"12.5674"},
             "content": "Italy",
             "Hol_type": "ski", 
-            "info": "Italy has popular skiing resorts in Northern Italy bordering France,Switzerland and Austria", 
+            "info": "Italy has popular skiing resorts in Northern Italy bordering France,Switzerland and Austria",
+            "airlines": ["Aer Lingus","Air Italia","British Airways"],
             "pic" : "assets/images/italy1.jpg" 
           }
       ],
@@ -60,7 +64,8 @@
             "coords": { "lat": "46.8182","lng":"8.2275"},
             "content": "Switzerland",
             "Hol_type": "ski", 
-            "info": "Switzerland has world famous skiing resorts, can be expensive", 
+            "info": "Switzerland has world famous skiing resorts, can be expensive",
+            "airlines": ["Aer Lingus","British Airways","Swiss Air"], 
             "pic" : "assets/images/switzerland1.jpg"  
           }
       ]
@@ -69,7 +74,7 @@
   /*
   This function initialize() takes in params that will be used in the google map api and google places api
   */
-  function initialize(holtype,lat,lng) {
+  function initialize(holtype,lat,lng,airlines_arr) {
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
     var center = new google.maps.LatLng(lat,lng)
     var mapdiv = document.getElementById('map_desktop');
@@ -100,8 +105,43 @@
       btn.innerHTML = "BOOK";
       btn.onclick = function () {
         alert("You want to book a resort in " + place_info[0].name);
-        place_info=[];
+        //place_info=[];
+        /*added here 15:20 today add code below where book button info  is moved to booking forms dropdown */
+        //This adds marker info on map - book button moves it to booking form resort dropdown
+        console.log("You want to book a resort in " + place_info[0].name + "going to loop through places to add to resort dropdown");
+        var select = document.getElementById("resort");
+        for(var i = 0; i < place_info.length; i++) {
+          var opt = place_info[i].name;
+          console.log("add place: " + opt);
+          var el = document.createElement("option");
+          el.textContent = opt;
+          el.value = opt;
+          select.appendChild(el);
+        }
+
+        //This adds airlines which selected country moves it to booking form airlines dropdown
+        //using the airlines_arr array which was passed into this initialize function 
+        var airlines= document.getElementById("airlines");
+        ////const myObj = JSON.parse(airlines_arr);
+        console.log("LOOOK HEEERE!!!");
+        console.log("1st element in Airlines array contains: " + airlines_arr.split(',')[0]);
+
+
+        for(var i = 0; i < airlines_arr.length; i++) {
+          var opts = airlines_arr.split(',')[i]; //got this from site - https://stackoverflow.com/questions/9133102/how-to-grab-substring-before-a-specified-character-jquery-or-javascript
+          console.log('An element of Airlines array taken from json data var: ' + opts);
+          var ele = document.createElement("option");
+          ele.textContent = opts;
+          ele.value = opts;
+          airlines.appendChild(ele);
+        }
+      //place_info=[];
+        window.location.href='#booking_form';
+
+
       };
+
+
       var container = document.getElementById('book_button');
       container.appendChild(btn);
     }
@@ -172,8 +212,10 @@
            var type_info = data.country[loc][i].info;
            var type_pic = data.country[loc][i].pic;
 
+           var airlines_arr = data.country[loc][i].airlines;
+
            
-           console.log('COUNTRY : ' + place + ', latitude= ' +  loc_coords_lat + ',  longtitude = ' + loc_coords_lng + ' , ' + type_hol + ' , info: ' + type_info + ' resort pic: ' + type_pic);
+           console.log('COUNTRY : ' + place + ', latitude= ' +  loc_coords_lat + ',  longtitude = ' + loc_coords_lng + ' , ' + type_hol + ' , info: ' + type_info + ' resort pic: ' + type_pic + ' one of the airlines who flies there ' + airlines_arr);
            
            var tag = document.createElement("p");
            var text = document.createTextNode("COUNTRY : " + place + "<br> latitude= " +  loc_coords_lat + "  longtitude = " + loc_coords_lng + " Holiday type: " + type_hol + " info: " + type_info);
@@ -184,8 +226,11 @@
            //radioYes.setAttribute("onclick","country_coord2('"+place+"','"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');")
            
            //radio onclick event is bound to a function country_map which takes in params which will be used in call to google map api
-           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');");
            
+           //radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');");
+           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+airlines_arr+"');");
+
+
            var lblgenerateMap = document.createElement("lable");
            var textgenerateMap = document.createTextNode("select to generate Map");
            lblgenerateMap.appendChild(textgenerateMap);
@@ -225,7 +270,7 @@
     }
  }
  /*This function will be used to call a function to google map api */ 
- function country_map(type_hol,selected_lat,selected_lng){
+ function country_map(type_hol,selected_lat,selected_lng, airlines_arr){
   // this passes the info here to a function which prepares a call to function which will use google map api and google places api
-  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng));
+  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng, airlines_arr));
 }
