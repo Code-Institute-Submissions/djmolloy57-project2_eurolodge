@@ -134,7 +134,7 @@
     /*added listener on click on marker to show places info*/ 
     marker.addListener('click', function(){
       infoWindow.open(map, marker);
-      generatePhoto(place);
+  
       alert('Clicking on marker!!');
      });
 
