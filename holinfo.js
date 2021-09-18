@@ -74,11 +74,11 @@
   /*
   This function initialize() takes in params that will be used in the google map api and google places api
   */
-  function initialize(holtype,lat,lng,airlines_arr) {
+  function initialize(holtype,lat,lng,device_map,airlines_arr) {
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
     var center = new google.maps.LatLng(lat,lng)
-    var mapdiv = document.getElementById('map_desktop');
-    map = new google.maps.Map(mapdiv, {
+    //var mapdiv = document.getElementById('map_desktop'); removed as using device_map (which maybe desktop ver or mobile ver)
+    map = new google.maps.Map(document.getElementById(device_map), {
       center: center,
       zoom: 7
     });
@@ -94,13 +94,36 @@
     //also includes calling a callback function
     service.nearbySearch(request,callback);
 
-    mapdiv.style.display = "block";
+    /*mapdiv.style.display = "block";
     mapdiv.style.height= "500px";
-    mapdiv.style.width= "800px";
+    mapdiv.style.width= "800px";*/
    
-    /* a condition to only create book button if it doesnt exist */ 
-    if (btn === null){
+    var mapdiv = document.getElementById(device_map); //above link worked fix the map div to be visible
+    var display_state = getComputedStyle(mapdiv).display;
 
+
+    //If div display is none and if its being viewed on a desktop then display it with height 500px and width 800px in center div id=map_desktop
+    if (display_state == "none" && device_map == "map_desktop") {
+                mapdiv.style.display = "block";
+                mapdiv.style.height= "500px";
+                mapdiv.style.width= "800px";
+                /*alert("trying to generate map to div map1_1 the display state is " + display_state);*/
+    }
+    /*else If div display is none and its its being viewed on a mobile device then display it with height 300px and width 400px in
+    div id=map1 or id=map2 etc - depending which country is clicked
+    */
+   else if (display_state == "none" && device_map != "map_desktop"){
+                mapdiv.style.display = "block";
+                mapdiv.style.height= "300px";
+                mapdiv.style.width= "400px";
+    }
+
+
+    /* a condition to only create book button if it doesnt exist */ 
+    //if (btn === null){
+    if( (btn===null && device_map=="map_desktop") || (btn!=null && device_map!="map_desktop")) {
+
+      
       btn = document.createElement("button");
       btn.innerHTML = "BOOK";
       btn.onclick = function () {
@@ -199,12 +222,17 @@
 
   function display_country_info(hol_type){
   
-    var country_num=0;
+    var country_num=0; //initialise variable used to be added as counter for country1,country2.. elements on site page for all views
+    var map_num=0; //initialise variable used to be added as counter for map1, map2.. elements on the site page for mobile view 
+    
+
     for (var loc in data.country) {
     
        country_num = country_num + 1;
+       map_num = map_num + 1;
+
        for (var i = 0; i < data.country[loc].length; i++) {
-       
+           
            var loc_coords_lat =  data.country[loc][i].coords.lat;
            var loc_coords_lng = data.country[loc][i].coords.lng;
            var place = data.country[loc][i].content;
@@ -223,12 +251,12 @@
            radioYes.setAttribute("type", "radio");
            radioYes.setAttribute("name", "mapselect");
            radioYes.setAttribute("value", place);
-           //radioYes.setAttribute("onclick","country_coord2('"+place+"','"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');")
            
-           //radio onclick event is bound to a function country_map which takes in params which will be used in call to google map api
+           var map_div = "map" + map_num; //variable to be used to reference the map divs for mobile view on site page
            
-           //radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"');");
-           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+airlines_arr+"');");
+           //radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+airlines_arr+"');");
+           
+           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+map_div +"','"+airlines_arr+"');");
 
 
            var lblgenerateMap = document.createElement("lable");
@@ -269,8 +297,23 @@
           alert("Selected radio button values is: " + getSelectedValue.value);
     }
  }
+ 
  /*This function will be used to call a function to google map api */ 
- function country_map(type_hol,selected_lat,selected_lng, airlines_arr){
+ function country_map(type_hol,selected_lat,selected_lng, map_div ,airlines_arr){
+    var device_view_map = "";
+    //check the device views site is larger than mobile view then map div will be using the div map_desktop at center of screen 
+    var query = window.matchMedia("(min-width: 601px)");
+    if (query.matches){
+      //if the page is wider than 600px
+      device_view_map = "map_desktop";
+    }
+    else {
+      device_view_map = map_div; //then the map div will be for mobile view map1, map2 etc
+    }
+    console.log("device_view_map is: " + device_view_map);
+
   // this passes the info here to a function which prepares a call to function which will use google map api and google places api
-  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng, airlines_arr));
+  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng,device_view_map ,airlines_arr));
+
+
 }
