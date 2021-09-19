@@ -10,17 +10,140 @@
       
         getholCountry(hol_picked.value);
   };
+
+  hol_btn.onchange = () => {
+
+    alert("changing event!!!");
+  }
+
   function enablebutton(){
     document.getElementById("hol_btn").disabled = false;
 
-    var desktop_container_map =  document.getElementById("desktop_container");
-    //desktop_container_map.style.display = "none";
-    //style.display = "block";
+    /*var desktop_container_map =  document.getElementById("desktop_container");
+    
+    desktop_container_map.style.display = "none";
+    //style.display = "block";*/
 
 
     var map_div = document.getElementById("hol_display"); //above link worked fix the map div to be visible
     var displayState = getComputedStyle(map_div).display;
     console.log("changing HolidayType 1st holiday element is visible? " + displayState);
+
+    var div_desktop_container = document.getElementById("desktop_container");
+    var div_desktop_book_button = document.getElementById("book_button");
+    var div_desktop_map =  document.getElementById("map_desktop");
+    
+    
+
+    //Below is the code that removes old countries from previously selected holiday type 
+    var country_1 = document.getElementById("country1");
+    var country_2 = document.getElementById("country2");
+    var country_3 = document.getElementById("country3");
+    var country_4 = document.getElementById("country4");
+    var country_5 = document.getElementById("country5");
+
+    var div_loc_pic1 = document.getElementById("loc_pic1");
+    var div_loc_info1 = document.getElementById("loc_info1");
+    var div_radio_dot1 = document.getElementById("radio_dot1");
+    var div_label_dot1 = document.getElementById("label_dot1");
+
+    var div_labelmap1 = document.getElementById("label_map1");
+    
+
+    var div_map1 =  document.getElementById("map1");
+
+    var div_button1 = document.getElementById("button1"); 
+
+    var div_loc_pic2 = document.getElementById("loc_pic2");
+    var div_loc_info2 = document.getElementById("loc_info2");
+    var div_radio_dot2 = document.getElementById("radio_dot2");
+    var div_label_dot2 = document.getElementById("label_dot2");
+
+    var div_labelmap2 = document.getElementById("label_map2");
+
+
+    var div_map2 =  document.getElementById("map2");
+    var div_button2 = document.getElementById("button2"); 
+
+    var div_loc_pic3 = document.getElementById("loc_pic3");
+    var div_loc_info3 = document.getElementById("loc_info3");
+    var div_radio_dot3 = document.getElementById("radio_dot3");
+    var div_label_dot3 = document.getElementById("label_dot3");
+    
+    var div_labelmap3 = document.getElementById("label_map3");
+
+    var div_map3 =  document.getElementById("map3");
+    var div_button3 = document.getElementById("button3"); 
+
+    var div_loc_pic4 = document.getElementById("loc_pic4");
+    var div_loc_info4 = document.getElementById("loc_info4");
+    var div_radio_dot4 = document.getElementById("radio_dot4");
+    var div_label_dot4 = document.getElementById("label_dot4");
+
+    var div_labelmap4 = document.getElementById("label_map4");
+
+
+    var div_map4 =  document.getElementById("map4");
+    var div_button4 = document.getElementById("button4"); 
+
+    var div_loc_pic5 = document.getElementById("loc_pic5");
+    var div_loc_info5 = document.getElementById("loc_info5");
+    var div_radio_dot5 = document.getElementById("radio_dot5");
+    var div_label_dot5 = document.getElementById("label_dot5");
+
+    var div_labelmap5 = document.getElementById("label_map5");
+  
+
+    var div_map5 =  document.getElementById("map5");
+    var div_button5 = document.getElementById("button5"); 
+
+    country_1.removeChild(div_loc_pic1);
+    country_1.removeChild(div_loc_info1);
+    country_1.removeChild(div_radio_dot1);
+    country_1.removeChild(div_label_dot1);
+
+    country_1.removeChild(div_labelmap1);
+    alert("Old country1 values are removed!!");
+ 
+
+    country_2.removeChild(div_loc_pic2);
+    country_2.removeChild(div_loc_info2);
+    country_2.removeChild(div_radio_dot2);
+    country_2.removeChild(div_label_dot2);
+
+    country_2.removeChild(div_labelmap2);
+    alert("Old country2 values are removed!!");
+
+    country_3.removeChild(div_loc_pic3);
+    country_3.removeChild(div_loc_info3);
+    country_3.removeChild(div_radio_dot3);
+    country_3.removeChild(div_label_dot3);
+
+    country_3.removeChild(div_labelmap3);
+    alert("Old country3 values are removed!!");
+
+    country_4.removeChild(div_loc_pic4);
+    country_4.removeChild(div_loc_info4);
+    country_4.removeChild(div_radio_dot4);
+    country_4.removeChild(div_label_dot4);
+  
+    country_4.removeChild(div_labelmap4);
+    alert("Old country4 values are removed!!");
+
+
+    country_5.removeChild(div_loc_pic5);
+    country_5.removeChild(div_loc_info5);
+    country_5.removeChild(div_radio_dot5);
+    country_5.removeChild(div_label_dot5);
+
+    country_5.removeChild(div_labelmap5);
+    alert("Old country5 values are removed!!");
+
+    //div_desktop_container.removeChild(div_desktop_map) doesnt work
+    //div_desktop_container.replaceChild(div_desktop_book_button);
+    var desktop_container_map =  document.getElementById("desktop_container");
+    desktop_container_map.style.display = "none";
+     
   }
   
 
@@ -209,12 +332,24 @@
     }
 
   }  
+ 
 
 
   /*
   This function initialize() takes in params that will be used in the google map api and google places api
   */
   function initialize(holtype,lat,lng,device_map,button_div,airlines_arr) { 
+
+    /* new add made no difference on holiday choice showing wigth new choice
+
+    console.log("IN START OF MAP INITIALIZE function device_map is  " + device_map); //WORKING!!!
+
+    console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
+    var desktop_container_map =  document.getElementById("desktop_container");
+    desktop_container_map.style.display = "block";
+    desktop_container_map.style.paddingTop = "10px";
+    desktop_container_map.style.MarginTop = "10px";*/
+
 
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
     var center = new google.maps.LatLng(lat,lng)
@@ -256,7 +391,8 @@
                 mapdiv.style.height= "300px";
                 mapdiv.style.width= "400px";
     }
-
+    
+   
 
     /* a condition to only create book button if it doesnt exist */ 
     if (btn === null){      
@@ -328,7 +464,7 @@
 
       }
     }
-    console.log("callback assigned into array index 0: " + place_info[0].name);
+    //console.log("callback assigned into array index 0: " + place_info[0].name);
 
   }
 
@@ -370,7 +506,11 @@
   */
 
   function display_country_info(hol_countries){
+
   
+
+
+
     var country_num=0; //initialise variable used to be added as counter for country1,country2.. elements on site page for all views
     var map_num=0; //initialise variable used to be added as counter for map1, map2.. elements on the site page for mobile view 
      var attr_num=0;
@@ -398,12 +538,12 @@
 
            
            console.log('COUNTRY : ' + place + ', latitude= ' +  loc_coords_lat + ',  longtitude = ' + loc_coords_lng + ' , ' + type_hol + ' , info: ' + type_info + ' resort pic: ' + type_pic + ' one of the airlines who flies there ' + airlines_arr);
-           
+                    
            var tag = document.createElement("p");
            var text = document.createTextNode("COUNTRY : " + place + "<br> latitude= " +  loc_coords_lat + "  longtitude = " + loc_coords_lng + " Holiday type: " + type_hol + " info: " + type_info);
            
            tag.setAttribute('id', 'loc_info' + attr_num);
-           
+               
            tag.appendChild(text);
 
 
@@ -411,27 +551,29 @@
            radioYes.setAttribute("type", "radio");
            radioYes.setAttribute("name", "mapselect");
            radioYes.setAttribute("value", place);
-
            radioYes.setAttribute('id', 'radio_dot' + attr_num);
-           
+                     
            var map_div = "map" + map_num; //variable to be used to reference the map divs for mobile view on site page to pass to country_map()
 
            var button_div = "button" + map_num; //variable record button number eg button1, button2... to pass to country_map()
-
+              
            radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+map_div +"','"+button_div +"','"+airlines_arr+"');");
            
 
-           var lblgenerateMap = document.createElement("lable");
+           var sel_generateMap = document.createElement("label");
            var textgenerateMap = document.createTextNode("select to generate Map");
 
-           lblgenerateMap.setAttribute('id', 'label_dot' + attr_num);
+           sel_generateMap.setAttribute('id', 'label_dot' + attr_num);       
 
-           lblgenerateMap.appendChild(textgenerateMap);
+           sel_generateMap.appendChild(textgenerateMap);
+
+           lblgenerateMap = document.createElement("label");
+           lblgenerateMap.setAttribute('id', 'label_map' + attr_num);
                                           
            
            var country_div = "country" + country_num;
            console.log("what country_div is generated " + country_div);
-
+           
            var element = document.getElementById(country_div);
            var oImg = document.createElement("img");
            oImg.setAttribute('src', type_pic);
@@ -439,9 +581,13 @@
            oImg.setAttribute('alt', 'na');
            oImg.setAttribute('height', '150px');
            oImg.setAttribute('width', '150px');
+           oImg.setAttribute('id', 'loc_pic' + attr_num);
+           
            element.appendChild(oImg);
+           
            element.appendChild(tag);
            element.appendChild(radioYes);
+           element.appendChild(sel_generateMap);
            element.appendChild(lblgenerateMap);
            
 
