@@ -3,12 +3,27 @@
   const hol_picked = document.querySelector('#hol_picked');
 
   hol_btn.onclick = (event) => {
+        document.getElementById("hol_btn").disabled = true;
         event.preventDefault();
         console.log(hol_picked.value);
         //display_country_info(hol_picked.value); //holiday type picked from dropdown to pass to display_country_info Function to display relevant countres
       
         getholCountry(hol_picked.value);
   };
+  function enablebutton(){
+    document.getElementById("hol_btn").disabled = false;
+
+    var desktop_container_map =  document.getElementById("desktop_container");
+    desktop_container_map.style.display = "none";
+    //style.display = "block";
+
+
+    var map_div = document.getElementById("hol_display"); //above link worked fix the map div to be visible
+    var displayState = getComputedStyle(map_div).display;
+    console.log("changing HolidayType 1st holiday element is visible? " + displayState);
+  }
+  
+
    
    var place_info = [];
    var btn=null;
