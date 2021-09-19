@@ -14,7 +14,7 @@
     document.getElementById("hol_btn").disabled = false;
 
     var desktop_container_map =  document.getElementById("desktop_container");
-    desktop_container_map.style.display = "none";
+    //desktop_container_map.style.display = "none";
     //style.display = "block";
 
 
