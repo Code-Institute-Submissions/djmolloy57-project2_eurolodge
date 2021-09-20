@@ -50,7 +50,10 @@ body{
   /*mobile phone media query */
   @media (max-width: 480px) {
    
-    
+    #hero{
+      padding-left: 10px;
+    }
+
     .hol_image{
       flex-direction: column;
 
@@ -58,6 +61,29 @@ body{
     #hol_display{
       flex-direction: column;
     }
+    .hero-content{
+      padding-left: 10px;
+    }
+    #booking_form {
+      padding-left: 10px;
+      
+    }
+    #About{
+      padding-left: 10px
+    }
+
+    #site_design {
+      padding-left: 10px
+    }
+    #external_res{
+      padding-left: 10px
+    }
+    #Contact{
+    
+      padding-left: 10px
+    }
+   
+   
   }
 
   /* laptop/desktop media query */
