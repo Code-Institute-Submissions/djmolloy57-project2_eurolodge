@@ -97,7 +97,8 @@ body{
 
     }
     #booking_form {
-      padding-left: 150px
+      padding-left: 150px;
+      margin-top: 50px;
     }
     #About{
       padding-left: 150px
@@ -112,6 +113,12 @@ body{
     #Contact{
     
         padding-left: 150px
+    }
+    #desktop_container{
+        margin-bottom: 50px;
+    }
+    #book_button{
+        margin-top: 10px;
     }
 
   }
