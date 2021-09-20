@@ -346,7 +346,7 @@
 
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
 
-    //ensure desktop map is displaying
+    //ensure desktop map is displaying after it was previously set to display none by function enablebutton()
     var desktop_container_map =  document.getElementById("desktop_container");
     desktop_container_map.style.display = "block";
     desktop_container_map.style.paddingTop = "10px";
