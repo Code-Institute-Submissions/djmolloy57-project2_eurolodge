@@ -33,4 +33,45 @@ body{
     width: 0px;
     display: none;
   }
+
+  #hol_display {
+    display: flex;
+  }
+  .hol_image {
+    display: flex;
+  }
+
+  /*#site_info{
+    height: 200px;
+    width: 400px;
+    display: block;
+  }*/
+
+  /*mobile phone media query */
+  @media (max-width: 480px) {
+   
+    
+    .hol_image{
+      flex-direction: column;
+
+    }
+    #hol_display{
+      flex-direction: column;
+    }
+  }
+
+  /* laptop/desktop media query */
+  @media (min-width: 1025px){
+
+    .hol_image {
+      flex-direction: row;
+  
+    }
+    #hol_display{
+      flex-direction: row;
+    }
+
+  }
+
+  
   
