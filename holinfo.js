@@ -291,7 +291,69 @@
           "loc_radius" : "240000", //100miles
           "pic" : "assets/images/greece.jpg"  //will need to be an array
         }
+    ],
+
+    "Berlin": [
+      {
+        "coords": { "lat": "52.5200","lng":"13.4050"},
+        "content": "Berlin",
+        "Hol_type": "tour",
+        "info": "Berlin city capital of Germany, large city, with famous landmarks, and underground dance culture", //will need to be an array - Need different info each holiday type
+        "airlines": ["Aer Lingus","Lufthansa","British Airways"],
+        "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
+        "pic" : "assets/images/berlin.jpg"  
+      }
+    ],
+
+    "Dublin": [
+      {
+      //"coords": { "lat": "53.3498","lng":"6.2603"},
+      "coords": { "lat": "53.33306","lng":"6.24889"},
+      "content": "Dublin",
+      "Hol_type": "tour",
+      "info": "Dublin city capital of Ireland, river liffey runs through it, friendy city, with famous pubs,hotels and restaurants", //will need to be an array - Need different info each holiday type
+      "airlines": ["Aer Lingus","RyanAir","British Airways"],
+      "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
+      "pic" : "assets/images/dublin1.jpg"  
+      }
+    ],
+
+    "London": [
+      {
+        "coords": { "lat": "51.5074","lng":"0.1278"},
+        "content": "London",
+        "Hol_type": "tour", 
+        "info": "London city capital of England, Thames river runs through it, large city, with famous landmarks,hotels and restaurants", //will need to be an array - Need different info each holiday type
+        "airlines": ["Aer Lingus","RyanAir","British Airways, EasyJet"],
+        "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
+        "pic" : "assets/images/london.jpg"  
+      }
+    ],
+
+    "Paris": [
+      {
+        "coords": { "lat": "48.8566","lng":"2.3522"},
+        "content": "Paris",
+        "Hol_type": "tour", 
+        "info": "Paris city capital of France,Saine river runs through it, large city, with famous landmarks,hotels and restaurants", //will need to be an array - Need different info each holiday type
+        "airlines": ["Aer Lingus","Air France","British Airways, EasyJet"],
+        "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
+        "pic" : "assets/images/paris.jpg"  
+      }
+    ],
+
+    "Rome":  [
+      {
+        "coords": { "lat": "41.9028","lng":"12.4964"},
+        "content": "Rome",
+        "Hol_type": "tour", 
+        "info": "Rome city capital of Italy,Tiber river runs through it, large city, with famous landmarks,hotels and restaurants", //will need to be an array - Need different info each holiday type
+        "airlines": ["Aer Lingus","Air Italia","British Airways, RyanAir"],
+        "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
+        "pic" : "assets/images/rome.jpg"  
+      }
     ]
+
 
 
     }
@@ -330,6 +392,11 @@
 
       //  //Southern_Spain, Portugal, Southern_France, Southern_Italy, Croatia, Greece
     }
+    if(hol_type === 'City'){
+      options= ["Berlin","Dublin","London","Paris","Rome"];
+     
+      display_country_info(options);
+   }
 
   }  
  
