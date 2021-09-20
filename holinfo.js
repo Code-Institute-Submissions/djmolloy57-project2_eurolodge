@@ -340,15 +340,19 @@
   */
   function initialize(holtype,lat,lng,device_map,button_div,airlines_arr) { 
 
-    /* new add made no difference on holiday choice showing wigth new choice
+    
 
     console.log("IN START OF MAP INITIALIZE function device_map is  " + device_map); //WORKING!!!
 
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
+
+    //ensure desktop map is displaying
     var desktop_container_map =  document.getElementById("desktop_container");
     desktop_container_map.style.display = "block";
     desktop_container_map.style.paddingTop = "10px";
-    desktop_container_map.style.MarginTop = "10px";*/
+    desktop_container_map.style.MarginTop = "10px";
+
+
 
 
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
