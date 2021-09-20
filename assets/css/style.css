@@ -65,10 +65,53 @@ body{
 
     .hol_image {
       flex-direction: row;
+      
   
     }
     #hol_display{
       flex-direction: row;
+    }
+    .hol_ski{
+      padding-right: 10px;
+     
+    }
+    .hol_beach{
+      padding-right: 10px;
+    }
+    .hol_city{
+      padding-right: 10px;
+    }
+    p{
+      color: black;
+      font-size: 1em;
+      text-align: left;
+     
+    }
+    #hero {
+      padding-left: 150px
+    }
+
+    .hero-content{
+
+      padding-left: 150px
+
+    }
+    #booking_form {
+      padding-left: 150px
+    }
+    #About{
+      padding-left: 150px
+    }
+
+    #site_design {
+      padding-left: 150px
+    }
+    #external_res{
+      padding-left: 150px
+    }
+    #Contact{
+    
+        padding-left: 150px
     }
 
   }
