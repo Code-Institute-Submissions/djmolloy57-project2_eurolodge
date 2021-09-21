@@ -1,0 +1,22 @@
+<html>
+  <head>
+  <centre>
+    <h1>Booking History</h1>
+    <hr />
+    <body>
+      Customer name: <span id="name"></span>
+      <br>
+      Holiday accomdation: <span id="accomdation"></span>
+      <br>
+      Flying with : <span id="airline"></span>
+    <script>
+        document.getElementById("name").innerHTML=localStorage.getItem("customername_value");
+        document.getElementById("accomdation").innerHTML=localStorage.getItem("accomdation_value");
+        document.getElementById("airline").innerHTML=localStorage.getItem("airline_value");
+    </script>
+    </centre>
+    </body>
+
+
+  </head>
+</html

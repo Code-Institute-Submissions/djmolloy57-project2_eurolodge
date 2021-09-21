@@ -14,9 +14,10 @@
         <h2>EUROHOL</h2>
         <div>
           <ul>
-            <li href="#">Home</a></li>
-            <li href="#">About</a></li>
-            <li href="#">Contact</a></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="Booking-history.html">Booking History</a></li>
           </ul>
         </div>
       </nav>
@@ -109,7 +110,7 @@
 
   </section>
   <section id="booking_form">
-    <form>
+    <form action="Booking-history.html" target="_blank">
        <label for="name">Name:</label>
        <input type="text" id=name>
        <br>
@@ -118,9 +119,10 @@
        </select>
        <br>
        <label for="airlines">Choose Airline:</label>
-       <select name="airline_picked" id="airlines" style="width: 150px;">
-       </select>
+       <select name="airline_picked" id="airlines" style="width: 150px;"></select>
+     
        <br>
+       <input type="submit" value="Submit Booking" onclick="passvalues();">
     </form>
   </section>
   <Section>
@@ -155,7 +157,9 @@
 </Section>
 <script src="holinfo.js"></script>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDS0EOHN0g4ZwhTBVU4UHbcjNpGMDssh0E"></script>
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDS0EOHN0g4ZwhTBVU4UHbcjNpGMDssh0E"></script>-->
+
+
 
 
 

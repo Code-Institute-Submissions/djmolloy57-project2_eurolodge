@@ -731,3 +731,24 @@
   google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng,device_view_map, button_div ,airlines_arr));
 
 }
+ /*The function is below it to write values in the Booking for to a seperate booking history page  */
+ function passvalues()
+ {
+   var customer_name = document.getElementById("name").value;
+   var accomdation_name = document.getElementById("resort").value;
+   //var airline_name = document.getElementById("airlines").value;
+
+   var select = document.getElementById('airlines');
+   var value = select.options[select.selectedIndex].value;
+
+   console.log("Airline picked was: " + value);
+
+   localStorage.setItem("customername_value",customer_name);
+   localStorage.setItem("accomdation_value",accomdation_name);
+   localStorage.setItem("airline_value",value);
+
+
+   return false;
+
+
+ }
