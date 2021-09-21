@@ -103,7 +103,7 @@
     country_1.removeChild(div_label_dot1);
 
     country_1.removeChild(div_labelmap1);
-    alert("Old country1 values are removed!!");
+    //alert("Old country1 values are removed!!");
  
 
     country_2.removeChild(div_loc_pic2);
@@ -112,7 +112,7 @@
     country_2.removeChild(div_label_dot2);
 
     country_2.removeChild(div_labelmap2);
-    alert("Old country2 values are removed!!");
+    //alert("Old country2 values are removed!!");
 
     country_3.removeChild(div_loc_pic3);
     country_3.removeChild(div_loc_info3);
@@ -120,7 +120,7 @@
     country_3.removeChild(div_label_dot3);
 
     country_3.removeChild(div_labelmap3);
-    alert("Old country3 values are removed!!");
+    //alert("Old country3 values are removed!!");
 
     country_4.removeChild(div_loc_pic4);
     country_4.removeChild(div_loc_info4);
@@ -128,7 +128,7 @@
     country_4.removeChild(div_label_dot4);
   
     country_4.removeChild(div_labelmap4);
-    alert("Old country4 values are removed!!");
+    //alert("Old country4 values are removed!!");
 
 
     country_5.removeChild(div_loc_pic5);
@@ -137,7 +137,7 @@
     country_5.removeChild(div_label_dot5);
 
     country_5.removeChild(div_labelmap5);
-    alert("Old country5 values are removed!!");
+    //alert("Old country5 values are removed!!");
 
     //div_desktop_container.removeChild(div_desktop_map) doesnt work
     //div_desktop_container.replaceChild(div_desktop_book_button);
@@ -387,7 +387,7 @@
     }
     if(hol_type === 'Beach'){
       options = ["Southern_Spain", "Portugal", "Southern_France", "Southern_Italy","Croatia" ,"Greece"];
-      alert("Beach holiday type is picked!!");
+      //alert("Beach holiday type is picked!!");
       display_country_info(options); //ERROR! at getholCountry (holinfo_javascript_test.js:431)
 
       //  //Southern_Spain, Portugal, Southern_France, Southern_Italy, Croatia, Greece
@@ -480,7 +480,7 @@
 
       console.log("IN END OF MAP INITIALIZE function device_map is  " + device_map);
       var container_mobile =  document.getElementById(button_div); //since non desktop referencing mobile button div button1, button2 ... 
-      alert("new button created which is button" + button_div);
+      //alert("new button created which is button" + button_div);
       container_mobile.appendChild(btn);
     }  
 
