@@ -505,6 +505,10 @@
         //using the airlines_arr array which was passed into this initialize function 
         var airlines= document.getElementById("airlines");
         ////const myObj = JSON.parse(airlines_arr);
+        
+        //new add
+        removeOptions(airlines);
+        
         console.log("LOOOK HEEERE!!!");
         console.log("1st element in Airlines array contains: " + airlines_arr.split(',')[0]);
 
@@ -512,6 +516,11 @@
         for(var i = 0; i < airlines_arr.length; i++) {
           var opts = airlines_arr.split(',')[i]; //got this from site - https://stackoverflow.com/questions/9133102/how-to-grab-substring-before-a-specified-character-jquery-or-javascript
           console.log('An element of Airlines array taken from json data var: ' + opts);
+          
+          //new add
+          if(opts === undefined){
+            continue;
+          }
           var ele = document.createElement("option");
           ele.textContent = opts;
           ele.value = opts;
@@ -524,9 +533,29 @@
     };
 
   }
+  //add new
+  function removeOptions(selectElement) {
+    var i, L = selectElement.options.length - 1;
+    for(i = L; i >= 0; i--) {
+      selectElement.remove(i);
+    }
+  }
 
  
   function callback(results,status){
+
+    //add new
+    var sel = document.getElementById('resort');
+    for (i = sel.length - 1; i >= 0; i--){
+        sel.remove(i);
+    }
+
+    //add new
+    if (place_info.length > 0) {
+      place_info = [];
+    }
+
+
 
     if(status == google.maps.places.PlacesServiceStatus.OK){
       for (var i = 0; i < results.length; i++){
