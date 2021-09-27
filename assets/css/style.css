@@ -3,6 +3,13 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0px;
 }
+/*new*/
+#hero{
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+
 #map_desktop {
     height: 0px;
     width: 0px;
@@ -43,14 +50,28 @@ body{
     display: flex;
   }
 
-  /*#site_info{
-    height: 200px;
-    width: 400px;
-    display: block;
-  }*/
   #resort{
     width: 150px;
   }
+  /* added new*/
+  #select_hol{
+
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+    /*added new */
+    #country1, #country2, #country3, #country4, #country5 {
+
+      position: relative;    
+  
+    }
+    #resort{
+      width: 150px;
+    }
+
+
+
+
 
   /*mobile phone media query */
   @media (max-width: 480px) {
@@ -98,6 +119,172 @@ body{
       padding-top: 5px;
       padding-left: 10px
     }
+    #contact_info ul >li i{
+      font-size: 150%;
+      color: white;
+   }
+   #contact_info ul > li{
+    display: inline-block;
+    margin-right: 30px;
+  }
+  #contact_info ul {
+    padding-left: 2px;
+  }
+}
+
+
+  /* iphone 6, 7, 8 Portrait */
+  @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: portrait) {
+      #hero{
+        padding-left: 10px;
+      }
+
+      .hol_image{
+        flex-direction: column;
+
+      }
+      #hol_display{
+        flex-direction: column;
+      }
+      .hero-content{
+        padding-left: 10px;
+      }
+      #booking_form {
+        padding-left: 10px;
+
+      }
+
+      #map1,#map2,#map3,#map4,#map5{
+
+        height: 60%;
+        width: 60%;
+        margin-left: 10px;
+
+      }
+
+
+      #button1,#button2,#button3,#button4,#button5{
+        padding-top: 5px;
+        padding-left: 10px;
+      
+      }
+
+
+      #country1, #country2, #country3, #country4, #country5 {
+
+        height: 350px;
+        width: 350px;
+
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        max-height: 350px;  /*added 9.38am 5th sept 2020 */
+      }
+
+
+
+      ul > li {
+
+        font-size: 12px;
+
+      .hero-content{
+        padding-left: 50px;
+      }
+      /*add new */
+      #site_info{
+        font-size: 12px;
+        width: 500px;
+      }
+      #site_design{
+        padding-left: 10px
+
+      }
+
+      #site_design > p{
+        font-size: 12px;
+      }
+
+      #external_res{
+        padding-left: 10px;
+      }
+
+      #external_res > p{
+        font-size: 12px;
+      }
+
+      #About > h2{
+
+
+        font-size: 20px;
+      }
+
+      .footer-content > h3{
+        font-size: 20px;
+      }
+      .footer-content > p{
+        font-size: 12px;
+        width: 500px;
+      }
+      #hol_btn{
+        font-size: 12px;
+      }
+      #hol_picked{
+        font-size: 12px;
+      }
+
+      #About{
+        padding-left: 10px
+      }
+
+      #Contact{
+
+        padding-left: 10px
+      }
+
+      #label_dot1, #label_dot2, #label_dot3, #label_dot4, #label_dot5 {
+
+
+        font-size: 12px;
+      }
+
+
+      #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
+
+
+        font-size: 12px;
+
+      }
+      .dropdown-item{
+        width: 50px;
+      }
+      #span_icon{
+        display: none;
+      }
+      .container-fluid{
+          padding: 0 !important;
+      }
+
+      #top_text > h2{
+
+        font-size: 20px;
+      }
+
+
+      #top_text > h4{
+
+        font-size: 12px;
+      }
+   
+      #resources_info{
+        display: none;
+      }
+     
+   }
+
+
   /* iphone 6,7,8 Landscape */
   @media only screen
     and (min-device-width: 375px)
@@ -315,7 +502,17 @@ body{
         #resources_info{
           display: none;
         }
-       
+        #contact_info ul >li i{
+          font-size: 150%;
+          color: white;
+       }
+       #contact_info ul > li{
+        display: inline-block;
+        margin-right: 30px;
+      }
+      #contact_info ul {
+        padding-left: 2px;
+      }
 
 
     }
@@ -438,6 +635,17 @@ and (-webkit-min-device-pixel-ratio: 1) {
   
       padding-left: 50px
   }
+  #contact_info ul >li i{
+    font-size: 170%;
+    color: white;
+  }
+  #contact_info ul > li{
+    display: inline-block;
+    margin-right: 30px;
+  }
+  #contact_info ul {
+    padding-left: 2px;
+  }
 
 
 }
@@ -513,14 +721,15 @@ and (-webkit-min-device-pixel-ratio: 1) {
       color: white;
    }
    #contact_info ul > li{
-     display: inline-block;
-     margin-right: 50px;
-   }
+    display: inline-block;
+    margin-right: 50px;
+  }
+  
+   
    #contact_info ul {
      padding-left: 2px;
    }
 
   }
-
   
   
