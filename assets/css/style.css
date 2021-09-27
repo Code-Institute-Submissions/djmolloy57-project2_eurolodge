@@ -192,8 +192,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
   }
   #select_hol{
-    border-style: dashed;
-    border-color: black;
+    
     padding-top: 0;
     margin-bottom: 0;
 
@@ -279,6 +278,12 @@ and (-webkit-min-device-pixel-ratio: 1) {
     }
     #book_button{
         margin-top: 10px;
+    }
+    #hero{
+      padding-left: 0px;
+    }
+    #span-space{
+      margin-left: 130px;
     }
 
   }
