@@ -189,9 +189,9 @@ window.onresize = reportWindowSize;
             "coords": { "lat": "42.506317","lng":"1.521835"},
             "content": "Andorra",
             "Hol_type": "ski",
-            "info": "Andorra is a budget skiing region for young adults.There is no direct flights from Ireland.",
+            "info": "Andorra is a independent principality situated between France and Spain in the Pyrenees mountains known budget ski resorts and a tax-haven that offers duty-free shopping.",
             "airlines": ["Air France","Lufthansa","RyanAir"],
-            "pic" : "assets/images/andorra2.jpg"
+            "pic" : "assets/images/pexels-andorra-skiing.jpeg"
           }
        ],
         "Austria": [
@@ -199,9 +199,9 @@ window.onresize = reportWindowSize;
            "coords": { "lat": "47.5162","lng":"14.5501"},
            "content": "Austria",
            "Hol_type": "ski",
-           "info": "Austria is a popular skiing region for families",
+           "info": "Austria's ski resorts are full of charm mostly pretty villages with onion-domed churches and a long tradition of hospitality beautiful ski areas with tree lined slopes and best lift system.",
            "airlines": ["Lauda Air","Lufthansa","RyanAir"],
-           "pic" : "assets/images/austria1.jpg"
+           "pic" : "assets/images/pexels-austria-skiing.jpeg"
          }
        ],
         "France": [
@@ -209,9 +209,9 @@ window.onresize = reportWindowSize;
             "coords": { "lat": "46.2276","lng":"2.2137"},
             "content": "France",
             "Hol_type": "ski",
-            "info": "France has popular skiing resorts with major town and cities within easy reach",
+            "info": "France is a firm favourite for ski holidays loved for its excellent food and easy to reach resorts from the traditional to purpose built best-known ski areas many at high altitude.",
             "airlines": ["Aer Lingus","Air France","RyanAir"],
-            "pic" : "assets/images/france1.jpg"
+            "pic" : "assets/images/pexels-france-skiing.jpeg"
         }
       ],
         "Italy": [
@@ -220,9 +220,9 @@ window.onresize = reportWindowSize;
             "coords": { "lat": "41.8719","lng":"12.5674"},
             "content": "Italy",
             "Hol_type": "ski", 
-            "info": "Italy has popular skiing resorts in Northern Italy bordering France,Switzerland and Austria",
+            "info": "Ski holidays in Italy are all about relaxed and easy-going Italian hospitality, delicious gourmet food and variety scenic skiing across the resorts.",
             "airlines": ["Aer Lingus","Air Italia","British Airways"],
-            "pic" : "assets/images/italy1.jpg" 
+            "pic" : "assets/images/pexels-italy-skiing.jpeg" 
           }
       ],
         "Switzerland": [
@@ -230,9 +230,9 @@ window.onresize = reportWindowSize;
             "coords": { "lat": "46.8182","lng":"8.2275"},
             "content": "Switzerland",
             "Hol_type": "ski", 
-            "info": "Switzerland has world famous skiing resorts, can be expensive",
+            "info": "Switzerlands home to some of Europe’s best ski resorts. They are full of character, surrounded by breathtaking scenery and famous mountains.",
             "airlines": ["Aer Lingus","British Airways","Swiss Air"], 
-            "pic" : "assets/images/switzerland1.jpg"  
+            "pic" : "assets/images/pexels-switzerland-skiing.jpeg"  
           }
       ],
 
@@ -242,10 +242,10 @@ window.onresize = reportWindowSize;
           "coords": { "lat": "36.7212","lng":"4.4217"},
           "content": "South Spain",
           "Hol_type": "beach", 
-          "info": "South Spain has many resorts for budget holiday",
+          "info": "Spain is well known for its sun, sea and sand along the Costa del Sol. With clear blue skies and sunshine practically all year round. You will find budget friendly accommodation. Find out why holidays in the south of Spain are as popular as ever.",
           "airlines": ["Aer Lingus","Iberia","RyanAir"],
           "loc_radius" : "240000", //100miles
-          "pic" : "assets/images/southern_spain.jpg"  
+          "pic" : "assets/images/pexels-spain_beach1.jpeg"  
         }
 
     ],
@@ -256,10 +256,10 @@ window.onresize = reportWindowSize;
           "coords": { "lat": "38.7223","lng":"9.1393"},
           "content": "Portugal",
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
-          "info": "Portual has many resorts along its beautiful coast near the famous city Lisbon", //will need to be an array - Need different info each holiday type
+          "info": "Portugal Its location on the Atlantic Ocean has influenced many aspects of its culture: salt cod and grilled sardines are national dishes, the Algarve's beaches are a major destination. You will find great value from the many budget friendly accommodation.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Tap Air","British Airways"],
           "loc_radius" : "240000", //100miles
-          "pic" : "assets/images/portugal.jpg"  //will need to be an array
+          "pic" : "assets/images/pexels-portugal-beach3-bestone.jpeg"  //will need to be an array
         }
 
     ],
@@ -269,10 +269,10 @@ window.onresize = reportWindowSize;
           "coords": { "lat": "43.7102","lng":"7.2620"},
           "content": "Southern France",
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
-          "info": "Southern France has many exclusive resorts for the refined traveler in Nice, Caan and Monaco", //will need to be an array - Need different info each holiday type
+          "info": "Beaches in the south of France are a great choice for brilliant weather. The area is know for vibrant towns and great cuisine. South of France is more expensive than locations like Portugal and Spain, however its charm and stunning beaches makes it worth it.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Air France","British Airways"],
           "loc_radius" : "240000", //100miles
-          "pic" : "assets/images/southern_france.jpg"  //will need to be an array
+          "pic" : "assets/images/pexels-southern-france.jpeg"  //will need to be an array
         }
 
     ],
@@ -283,10 +283,10 @@ window.onresize = reportWindowSize;
           "coords": { "lat": "40.8518","lng":"14.2681"},
           "content": "Southern Italy",
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
-          "info": "Southern Italy has many resorts along the Amalfi coast south of Naples", //will need to be an array - Need different info each holiday type
+          "info": "Southern Italy with its Mediterranean climate, the southern region is a popular destination for beach holidays in Italy even during the off-peak autumn months. Explorer the beautiful Amalfi Coastline with its beaches and the wonderful cuisine.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Air Italia","British Airways"],
           "loc_radius" : "240000", //100miles
-          "pic" : "assets/images/southern_italy.jpg"  //will need to be an array
+          "pic" : "assets/images/pexels-southern-italy-beach2.jpeg"  //will need to be an array
         }
 
     ],
@@ -297,10 +297,10 @@ window.onresize = reportWindowSize;
           "coords": { "lat": "42.6507","lng":"18.0944"},
           "content": "Croata",
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
-          "info": "Croatia has many resorts along its beautiful coast near famous castle city of Debrovnic", //will need to be an array - Need different info each holiday type
+          "info": "Croatia nestled alongside the breathtaking azure waters of the Adriatic Sea, the country is incredibly diverse, with a number of gorgeous beaches and island retreats. You can find both luxury to budget-friendly accomodation and it has many vibrant towns.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","RyanAir","British Airways"],
           "loc_radius" : "240000", //100miles
-          "pic" : "assets/images/croatia.jpg"  //will need to be an array
+          "pic" : "assets/images/pexels-croatia-beach1.jpeg"  //will need to be an array
         }
 
     ],
@@ -323,14 +323,14 @@ window.onresize = reportWindowSize;
         "coords": { "lat": "52.5200","lng":"13.4050"},
         "content": "Berlin",
         "Hol_type": "tour",
-        "info": "Berlin city capital of Germany, large city, with famous landmarks, and underground dance culture", //will need to be an array - Need different info each holiday type
+        "info": "Berlin is rich in history, has great food and has a notorious nightlife scene. Just a short flight from Dublin, the ever evolving art scene and central hub of attractions, museums make it the perfect city break destination.", //will need to be an array - Need different info each holiday type
         "airlines": ["Aer Lingus","Lufthansa","British Airways"],
         "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
-        "pic" : "assets/images/berlin.jpg"  
+        "pic" : "assets/images/pexels-berlin2.jpeg"  
       }
     ],
 
-    "Dublin": [
+    /*"Dublin": [
       {
       //"coords": { "lat": "53.3498","lng":"6.2603"},
       "coords": { "lat": "53.33306","lng":"6.24889"},
@@ -341,17 +341,32 @@ window.onresize = reportWindowSize;
       "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
       "pic" : "assets/images/dublin1.jpg"  
       }
+    ],*/
+
+    "Barcelona": [
+      {
+
+      "coords": { "lat": "53.33306","lng":"6.24889"},
+      "content": "Barcelona",
+      "Hol_type": "tour",
+      "info": "Barcelona is an exciting blend of ancient city walls, 20th century architectural marvels, beach bliss and city buzz. Visit charming local neighbourhoods and fascinating architecture like Gaudí’s iconic Sagrada Familia.", //will need to be an array - Need different info each holiday type
+      "airlines": ["Aer Lingus","RyanAir","British Airways"],
+      "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
+      "pic" : "assets/images/pexels-barcalona1.jpeg"
+      }
     ],
+
+
 
     "London": [
       {
         "coords": { "lat": "51.5074","lng":"0.1278"},
         "content": "London",
         "Hol_type": "tour", 
-        "info": "London city capital of England, Thames river runs through it, large city, with famous landmarks,hotels and restaurants", //will need to be an array - Need different info each holiday type
+        "info": "One of the worlds most beloved cities. London is a place of grace and grandeur on the banks of the River Thames. From its world famous bridges to its majestic museums, discover an endless array of things to do.", //will need to be an array - Need different info each holiday type
         "airlines": ["Aer Lingus","RyanAir","British Airways, EasyJet"],
         "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
-        "pic" : "assets/images/london.jpg"  
+        "pic" : "assets/images/pexels-london1.jpeg"  
       }
     ],
 
@@ -360,10 +375,10 @@ window.onresize = reportWindowSize;
         "coords": { "lat": "48.8566","lng":"2.3522"},
         "content": "Paris",
         "Hol_type": "tour", 
-        "info": "Paris city capital of France,Saine river runs through it, large city, with famous landmarks,hotels and restaurants", //will need to be an array - Need different info each holiday type
+        "info": "Paris is a dream destination that you have to see at least once. Romantic cobbled streets, beautiful boulevards, majestic monuments and some of the world’s most recognisable architectural icons. Wonderful Restaurants and Mueseums.", //will need to be an array - Need different info each holiday type
         "airlines": ["Aer Lingus","Air France","British Airways, EasyJet"],
         "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
-        "pic" : "assets/images/paris.jpg"  
+        "pic" : "assets/images/pexels-paris4.jpeg"  
       }
     ],
 
@@ -372,10 +387,10 @@ window.onresize = reportWindowSize;
         "coords": { "lat": "41.9028","lng":"12.4964"},
         "content": "Rome",
         "Hol_type": "tour", 
-        "info": "Rome city capital of Italy,Tiber river runs through it, large city, with famous landmarks,hotels and restaurants", //will need to be an array - Need different info each holiday type
+        "info": "Rome stepping into antiquity, modern life is lived among the remnants of peoples form ancient times who have left their mark on every cobblestone and corner of this incredible city. Enjoy wonderful atmosphere, Italian cuisine and lively nightlife.", //will need to be an array - Need different info each holiday type
         "airlines": ["Aer Lingus","Air Italia","British Airways, RyanAir"],
         "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
-        "pic" : "assets/images/rome.jpg"  
+        "pic" : "assets/images/pexels-rome1.jpeg"  
       }
     ]
 
@@ -420,7 +435,7 @@ window.onresize = reportWindowSize;
       //  //Southern_Spain, Portugal, Southern_France, Southern_Italy, Croatia, Greece
     }
     if(hol_type === 'City'){
-      options= ["Berlin","Dublin","London","Paris","Rome"];
+      options= ["Berlin","Barcelona","London","Paris","Rome"];
      
       display_country_info(options);
    }
@@ -667,7 +682,8 @@ window.onresize = reportWindowSize;
            console.log('COUNTRY : ' + place + ', latitude= ' +  loc_coords_lat + ',  longtitude = ' + loc_coords_lng + ' , ' + type_hol + ' , info: ' + type_info + ' resort pic: ' + type_pic + ' one of the airlines who flies there ' + airlines_arr);
                     
            var tag = document.createElement("p");
-           var text = document.createTextNode("COUNTRY : " + place + "<br> latitude= " +  loc_coords_lat + "  longtitude = " + loc_coords_lng + " Holiday type: " + type_hol + " info: " + type_info);
+           //var text = document.createTextNode("COUNTRY : " + place + "<br> latitude= " +  loc_coords_lat + "  longtitude = " + loc_coords_lng + " Holiday type: " + type_hol + " info: " + type_info);
+           var text = document.createTextNode("info: " + type_info);
            
            tag.setAttribute('id', 'loc_info' + attr_num);
                
