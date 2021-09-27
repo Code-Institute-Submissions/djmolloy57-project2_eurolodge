@@ -1,15 +1,57 @@
 window.addEventListener("load", function(){
 
+    var country_divs = document.getElementById('hol_display');
+    var div_display_state = getComputedStyle(country_divs).display;
+
      document.getElementById("cust_name").innerHTML=localStorage.getItem("customername_value");
      document.getElementById("selected_lodging").innerHTML=localStorage.getItem("accomdation_value");
      document.getElementById("flyin_airline").innerHTML=localStorage.getItem("airline_value");
 
+     if (div_display_state === "flex"){
+      country_divs.style.display = "none";
+   }
 
   });
   
+/* Function Triggered on Windows Resizing event */
+function reportWindowSize(){
+  // on resizing window if in mobile view and generated maps and change to non mobilr view it wont display mobile maps
+
+  let query = window.matchMedia("(min-width: 601px)");
+ 
+  if (query.matches){
+        //if the page is wider than 600px
+
+        device_view_map = "map_desktop";
+
+        var mobile_map_frame=[];
+        var mobile_btn_frame=[];
+
+        for(var i= 1; i < 6; i++){
+           mobile_map_frame[i] = document.getElementById("map"+i);
+           mobile_map_frame[i].style.display = "none";
+           mobile_btn_frame[i] =  document.getElementById("button"+i);
+           mobile_btn_frame[i].style.display = "none";
+        }
+
+   }
+   else {
+       //device_view_map = map_div;
+      var desktop_map_frame =  document.getElementById("map_desktop"); //tested by generating map on desktop view and reducing it to mobile view the desktop map should dissappear
+      desktop_map_frame.style.display = "none"; 
+
+      var desktop_btn_frame =  document.getElementById("book_button");
+      desktop_btn_frame.style.display = "none";
+  }
+
+  
+}
+
+window.onresize = reportWindowSize;
+
   
   
-  /*This is the only Choose holiday type Get info button event */
+/*This is the only Choose holiday type Get info button event */
   const hol_btn = document.querySelector('#hol_btn');
   const hol_picked = document.querySelector('#hol_picked');
 
@@ -17,7 +59,7 @@ window.addEventListener("load", function(){
         document.getElementById("hol_btn").disabled = true;
         event.preventDefault();
         console.log(hol_picked.value);
-        //display_country_info(hol_picked.value); //holiday type picked from dropdown to pass to display_country_info Function to display relevant countres
+        
       
         getholCountry(hol_picked.value);
   };
@@ -30,12 +72,6 @@ window.addEventListener("load", function(){
   function enablebutton(){
     document.getElementById("hol_btn").disabled = false;
 
-    /*var desktop_container_map =  document.getElementById("desktop_container");
-    
-    desktop_container_map.style.display = "none";
-    //style.display = "block";*/
-
-
     var map_div = document.getElementById("hol_display"); //above link worked fix the map div to be visible
     var displayState = getComputedStyle(map_div).display;
     console.log("changing HolidayType 1st holiday element is visible? " + displayState);
@@ -44,120 +80,100 @@ window.addEventListener("load", function(){
     var div_desktop_book_button = document.getElementById("book_button");
     var div_desktop_map =  document.getElementById("map_desktop");
     
-    
+    var country_num=[];
+    var div_locpic_num=[];
+    var div_locinfo_num=[];
+    var div_radio_dot_num=[];
+    var div_label_dot_num=[];
+    var div_labelmap_num=[];
+    var mobile_map_frame_num=[];
 
-    //Below is the code that removes old countries from previously selected holiday type 
-    var country_1 = document.getElementById("country1");
-    var country_2 = document.getElementById("country2");
-    var country_3 = document.getElementById("country3");
-    var country_4 = document.getElementById("country4");
-    var country_5 = document.getElementById("country5");
-
-    var div_loc_pic1 = document.getElementById("loc_pic1");
-    var div_loc_info1 = document.getElementById("loc_info1");
-    var div_radio_dot1 = document.getElementById("radio_dot1");
-    var div_label_dot1 = document.getElementById("label_dot1");
-
-    var div_labelmap1 = document.getElementById("label_map1");
-    
-
-    var div_map1 =  document.getElementById("map1");
-
-    var div_button1 = document.getElementById("button1"); 
-
-    var div_loc_pic2 = document.getElementById("loc_pic2");
-    var div_loc_info2 = document.getElementById("loc_info2");
-    var div_radio_dot2 = document.getElementById("radio_dot2");
-    var div_label_dot2 = document.getElementById("label_dot2");
-
-    var div_labelmap2 = document.getElementById("label_map2");
+    var checked_div_locpic_num = "";
+    var checked_div_locinfo_num = "";
+    var checked_div_radio_dot_num ="";
+    var checked_div_label_dot_num = "";
+    var checked_div_labelmap_num = "";
 
 
-    var div_map2 =  document.getElementById("map2");
-    var div_button2 = document.getElementById("button2"); 
+    for(var i= 1; i < 6; i++){
+       country_num[i] = document.getElementById("country"+i);
 
-    var div_loc_pic3 = document.getElementById("loc_pic3");
-    var div_loc_info3 = document.getElementById("loc_info3");
-    var div_radio_dot3 = document.getElementById("radio_dot3");
-    var div_label_dot3 = document.getElementById("label_dot3");
-    
-    var div_labelmap3 = document.getElementById("label_map3");
+       div_locpic_num[i] = document.getElementById("loc_pic"+i);
 
-    var div_map3 =  document.getElementById("map3");
-    var div_button3 = document.getElementById("button3"); 
+       div_locinfo_num[i]= document.getElementById("loc_info"+i);
 
-    var div_loc_pic4 = document.getElementById("loc_pic4");
-    var div_loc_info4 = document.getElementById("loc_info4");
-    var div_radio_dot4 = document.getElementById("radio_dot4");
-    var div_label_dot4 = document.getElementById("label_dot4");
+       div_radio_dot_num[i] = document.getElementById("radio_dot"+i);
 
-    var div_labelmap4 = document.getElementById("label_map4");
+       div_label_dot_num[i] = document.getElementById("label_dot"+i);
 
+       div_labelmap_num[i] = document.getElementById("label_map"+i);
 
-    var div_map4 =  document.getElementById("map4");
-    var div_button4 = document.getElementById("button4"); 
+       if (typeof(div_locpic_num[i]) != 'undefined' && div_locpic_num[i] != null)
+       {
+          checked_div_locpic_num = div_locpic_num[i];
+       }
+       if (typeof( div_locinfo_num[i]) != 'undefined' &&  div_locinfo_num[i] != null)
+       {
+          checked_div_locinfo_num =  div_locinfo_num[i];
+       }
+       if (typeof(div_radio_dot_num[i]) != 'undefined' &&   div_radio_dot_num[i] != null)
+       {
+          checked_div_radio_dot_num = div_radio_dot_num[i];
+       }
+       if (typeof(div_label_dot_num[i]) != 'undefined' &&   div_label_dot_num[i] != null)
+       {
+          checked_div_label_dot_num = div_label_dot_num[i];
+       }
+       if (typeof(div_labelmap_num[i])!= 'undefined' &&  div_labelmap_num[i] != null)
+       {
+          checked_div_labelmap_num = div_labelmap_num[i];
+       }
+       remove_old_elements(country_num[i],checked_div_locpic_num,checked_div_locinfo_num,checked_div_radio_dot_num,checked_div_label_dot_num,checked_div_labelmap_num);
+    }
+    /*To determine if you are in desktop view or mobile view - desktop view on have to hide the desktop container
+      else you are in mobile view and their may have been a number of map location that have been generated on last holiday choice and have to be removed!!
+    */
+    alert("whats display state: " + displayState);
+    if (is_DesktopMap_Div()){
+        alert("Your in desktop view!!");
+        var desktop_container_map =  document.getElementById("desktop_container");
+        desktop_container_map.style.display = "none";
+    }else{
+        alert("Your in mobile view!!");
+        map_div.style.display = "none";
+        var map_div_parent_node = document.getElementById('hol_display').children;
+        if (map_div.children.length > 0){
+          map_children = map_div.children;
 
-    var div_loc_pic5 = document.getElementById("loc_pic5");
-    var div_loc_info5 = document.getElementById("loc_info5");
-    var div_radio_dot5 = document.getElementById("radio_dot5");
-    var div_label_dot5 = document.getElementById("label_dot5");
+          for (let i = 0; i < map_children.length; i++) {
 
-    var div_labelmap5 = document.getElementById("label_map5");
-  
+             if (map_children[i].style.display=='block') {
 
-    var div_map5 =  document.getElementById("map5");
-    var div_button5 = document.getElementById("button5"); 
+               country_id = "country" + map_children[i].id.slice(-1);
+               map_children[i].style.display = "none";
+             }
+          }
 
-    country_1.removeChild(div_loc_pic1);
-    country_1.removeChild(div_loc_info1);
-    country_1.removeChild(div_radio_dot1);
-    country_1.removeChild(div_label_dot1);
+        }
+    }
 
-    country_1.removeChild(div_labelmap1);
-    //alert("Old country1 values are removed!!");
- 
-
-    country_2.removeChild(div_loc_pic2);
-    country_2.removeChild(div_loc_info2);
-    country_2.removeChild(div_radio_dot2);
-    country_2.removeChild(div_label_dot2);
-
-    country_2.removeChild(div_labelmap2);
-    //alert("Old country2 values are removed!!");
-
-    country_3.removeChild(div_loc_pic3);
-    country_3.removeChild(div_loc_info3);
-    country_3.removeChild(div_radio_dot3);
-    country_3.removeChild(div_label_dot3);
-
-    country_3.removeChild(div_labelmap3);
-    //alert("Old country3 values are removed!!");
-
-    country_4.removeChild(div_loc_pic4);
-    country_4.removeChild(div_loc_info4);
-    country_4.removeChild(div_radio_dot4);
-    country_4.removeChild(div_label_dot4);
-  
-    country_4.removeChild(div_labelmap4);
-    //alert("Old country4 values are removed!!");
-
-
-    country_5.removeChild(div_loc_pic5);
-    country_5.removeChild(div_loc_info5);
-    country_5.removeChild(div_radio_dot5);
-    country_5.removeChild(div_label_dot5);
-
-    country_5.removeChild(div_labelmap5);
-    //alert("Old country5 values are removed!!");
-
-    //div_desktop_container.removeChild(div_desktop_map) doesnt work
-    //div_desktop_container.replaceChild(div_desktop_book_button);
-    var desktop_container_map =  document.getElementById("desktop_container");
-    desktop_container_map.style.display = "none";
+ }
      
-  }
   
 
+  function remove_old_elements(country_num,div_locpic_num,div_locinfo_num,div_radio_dot_num,div_label_dot_num,div_labelmap_num){
+
+
+
+        country_num.removeChild(div_locpic_num);
+        country_num.removeChild(div_locinfo_num);
+        country_num.removeChild(div_radio_dot_num);
+        country_num.removeChild(div_label_dot_num);
+        country_num.removeChild(div_labelmap_num);
+    
+    
+    
+  }
    
    var place_info = [];
    var btn=null;
@@ -199,7 +215,7 @@ window.addEventListener("load", function(){
         }
       ],
         "Italy": [
-      //41.8719° N, 12.5674°
+    
           {
             "coords": { "lat": "41.8719","lng":"12.5674"},
             "content": "Italy",
@@ -210,7 +226,6 @@ window.addEventListener("load", function(){
           }
       ],
         "Switzerland": [
-      //46.8182° N, 8.2275
           {
             "coords": { "lat": "46.8182","lng":"8.2275"},
             "content": "Switzerland",
@@ -221,20 +236,20 @@ window.addEventListener("load", function(){
           }
       ],
 
-      //add new
+      
       "Southern_Spain": [
         {
           "coords": { "lat": "36.7212","lng":"4.4217"},
           "content": "South Spain",
-          "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
-          "info": "South Spain has many resorts for budget holidays", //will need to be an array - Need different info each holiday type
+          "Hol_type": "beach", 
+          "info": "South Spain has many resorts for budget holiday",
           "airlines": ["Aer Lingus","Iberia","RyanAir"],
           "loc_radius" : "240000", //100miles
-          "pic" : "assets/images/southern_spain.jpg"  //will need to be an array
+          "pic" : "assets/images/southern_spain.jpg"  
         }
 
     ],
-    //38.7223° N, 9.1393° W
+    
     "Portugal": [
 
         {
@@ -248,7 +263,6 @@ window.addEventListener("load", function(){
         }
 
     ],
-    //43.7102° N, 7.2620° E
     "Southern_France": [
 
         {
@@ -379,6 +393,7 @@ window.addEventListener("load", function(){
     var infodiv = document.getElementById('site_info'); //above link worked fix the map dive to be visible
     var div_display_state = getComputedStyle(infodiv).display;
 
+    alert("I am in getholCountry!!");
     /*alert("trying to generate map to div map1_1 the display state is " + display_state);// shows overflow state is showing as hidden*/
 
     if (div_display_state == "block") {
@@ -393,7 +408,8 @@ window.addEventListener("load", function(){
 
     if(hol_type === 'Skiing'){
       options = ["Andorra", "Austria", "France", "Italy","Switzerland"];
-      //display_country_info(hol_type);
+      
+      alert("You picked skiing");
       display_country_info(options);
     }
     if(hol_type === 'Beach'){
@@ -419,7 +435,6 @@ window.addEventListener("load", function(){
   function initialize(holtype,lat,lng,device_map,button_div,airlines_arr) { 
 
     
-
     console.log("IN START OF MAP INITIALIZE function device_map is  " + device_map); //WORKING!!!
 
     console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
@@ -620,13 +635,14 @@ window.addEventListener("load", function(){
 
   
 
-
+    //add new to ensure hol_display section is displayed
+    var map_div = document.getElementById("hol_display");
+    map_div.style.display = "flex";
 
     var country_num=0; //initialise variable used to be added as counter for country1,country2.. elements on site page for all views
     var map_num=0; //initialise variable used to be added as counter for map1, map2.. elements on the site page for mobile view 
-     var attr_num=0;
+    var attr_num=0;
 
-    //for (var loc in data.country) {
     for (var loc in hol_countries) {
        country_num = country_num + 1;
        map_num = map_num + 1;
@@ -694,12 +710,29 @@ window.addEventListener("load", function(){
            oImg.setAttribute('width', '150px');
            oImg.setAttribute('id', 'loc_pic' + attr_num);
            
-           element.appendChild(oImg);
+           if (typeof(oImg) != 'undefined' && element != null)
+           {
+              element.appendChild(oImg);
+           }
+           if (typeof(tag) != 'undefined' && element != null)
+           {
+              element.appendChild(tag);
+           }
+           if (typeof(radioYes) != 'undefined' && element != null)
+           {
+              element.appendChild(radioYes);
+           }
+           if (typeof(sel_generateMap) != 'undefined' && element != null)
+           {
+              element.appendChild(sel_generateMap);
+           }
+
+           if (typeof(lblgenerateMap) != 'undefined' && element != null)
+           {
+              element.appendChild(lblgenerateMap);
+           }
+
            
-           element.appendChild(tag);
-           element.appendChild(radioYes);
-           element.appendChild(sel_generateMap);
-           element.appendChild(lblgenerateMap);
            
 
        }
@@ -723,10 +756,22 @@ window.addEventListener("load", function(){
           alert("Selected radio button values is: " + getSelectedValue.value);
     }
  }
+
+ function is_DesktopMap_Div(){
+  //check the device views site is larger than mobile view
+    var query = window.matchMedia("(min-width: 601px)");
+    if (query.matches){
+        return true;
+    }else{
+        return false;
+    }
+  }
  
  /*This function will be used to call a function to google map api */ 
   function country_map(type_hol,selected_lat,selected_lng, map_div, button_div ,airlines_arr){
     var device_view_map = "";
+    
+    alert("I am in country map function passing params over to initializer function for google maps");
     //check the device views site is larger than mobile view then map div will be using the div map_desktop at center of screen 
     var query = window.matchMedia("(min-width: 601px)");
     if (query.matches){
