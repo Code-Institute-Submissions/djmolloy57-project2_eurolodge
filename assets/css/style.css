@@ -1,5 +1,7 @@
 body{
     background-color: skyblue;
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
 }
 #map_desktop {
     height: 0px;
@@ -173,23 +175,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     top: 280;
     padding-left: 0;
   }
-
-
-
-
-  /*#book_button{
-    padding-left: 60px;
-    padding-top: 0;
-    margin-top: 0;
-    padding-bottom: 10px;
-  }
-  #button_desktop{
-  
-    padding-top: 1px;
-    margin-top: 1px;
-  
-
-  }*/
 
   #booking_form{
    
