@@ -1,3 +1,14 @@
+window.addEventListener("load", function(){
+
+     document.getElementById("cust_name").innerHTML=localStorage.getItem("customername_value");
+     document.getElementById("selected_lodging").innerHTML=localStorage.getItem("accomdation_value");
+     document.getElementById("flyin_airline").innerHTML=localStorage.getItem("airline_value");
+
+
+  });
+  
+  
+  
   /*This is the only Choose holiday type Get info button event */
   const hol_btn = document.querySelector('#hol_btn');
   const hol_picked = document.querySelector('#hol_picked');
@@ -734,21 +745,36 @@
  /*The function is below it to write values in the Booking for to a seperate booking history page  */
  function passvalues()
  {
-   var customer_name = document.getElementById("name").value;
-   var accomdation_name = document.getElementById("resort").value;
-   //var airline_name = document.getElementById("airlines").value;
+   var customer_name = document.getElementById("formName").value;
+   var accomodation_name = document.getElementById("resort").value;
+    
+   alert("I am in the passvalue funtcion");
 
    var select = document.getElementById('airlines');
-   var value = select.options[select.selectedIndex].value;
-
-   console.log("Airline picked was: " + value);
+   var selected_airline = select.options[select.selectedIndex].value;
 
    localStorage.setItem("customername_value",customer_name);
-   localStorage.setItem("accomdation_value",accomdation_name);
-   localStorage.setItem("airline_value",value);
+   localStorage.setItem("accomdation_value",accomodation_name);
+   localStorage.setItem("airline_value",selected_airline);
+   
+   document.getElementById("cust_name").innerHTML=localStorage.getItem("customername_value");
+   document.getElementById("selected_lodging").innerHTML=localStorage.getItem("accomdation_value");
+   document.getElementById("flyin_airline").innerHTML=localStorage.getItem("airline_value");
 
+   alert("Your details are booked!! Please see Booking History Menu");
 
-   return false;
+   return true;
+
 
 
  }
+
+
+
+   
+
+   
+
+
+
+  
