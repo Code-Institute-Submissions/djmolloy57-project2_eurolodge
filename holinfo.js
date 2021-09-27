@@ -513,7 +513,12 @@ window.onresize = reportWindowSize;
     }
     if (display_state == "none" && device_map == "map_desktop") {
         
-      var container = document.getElementById("book_button");//this is the desktop button div 
+      var container = document.getElementById("book_button");//this is the desktop button div
+
+      //set display to block for book_button  display style so it can be caught by remove child to remove old instances
+      container.style.display = "block";
+      
+      
       container.appendChild(btn);
       console.log("IN END OF MAP INITIALIZE function device_map is  " + device_map);
     }
@@ -521,7 +526,10 @@ window.onresize = reportWindowSize;
 
       console.log("IN END OF MAP INITIALIZE function device_map is  " + device_map);
       var container_mobile =  document.getElementById(button_div); //since non desktop referencing mobile button div button1, button2 ... 
-      //alert("new button created which is button" + button_div);
+  
+      //to make sure button generated in mobile view are in display 'block' this condition will be used to remove old buttons when another holiday type is selected in mobile view
+      container_mobile.style.display = "block";
+
       container_mobile.appendChild(btn);
     }  
 
