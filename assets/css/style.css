@@ -98,7 +98,227 @@ body{
       padding-top: 5px;
       padding-left: 10px
     }
+  /* iphone 6,7,8 Landscape */
+  @media only screen
+    and (min-device-width: 375px)
+    and (max-device-width: 667px)
+    and (-webkit-min-device-pixel-ratio: 2)
+    and (orientation: landscape) {
 
+        #hero {
+          padding-left: 50px
+        }
+        .hero-content{
+
+          padding-left: 50px;
+          padding-top: 10px;
+          margin-bottom: 10px;
+
+        }
+        .hol_image {
+          flex-direction: row;
+
+
+        }
+        #hol_display{
+          flex-direction: row;
+        }
+
+        p{
+
+            font-size: 0.8em;
+            text-align: left;
+            padding: 10px 0 0 0;
+
+        }
+
+        #map_desktop{
+          height: 500px !important;
+          width: 700px !important;
+
+        }
+        #book_button{
+          padding-top: 5px !important;
+          padding-left: 5px !important;
+          padding-bottom: 10px !important;
+
+        }
+
+        .botton_padding {
+          margin-bottom: 5px !important;
+          padding-bottom: 5px !important;
+          padding-left:  60px !important;
+          margin-left:  60px !important;
+          width: 60%;
+          height: 60%;
+          max-width: 70%;
+          max-height: 70%;
+        }
+
+
+        #country1, #country2, #country3, #country4, #country5 {
+
+          height: 350px;
+          width: 500px;
+
+          /*add new*/
+          padding-top: 20px;
+          margin-top: 20px;
+
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          max-height: 400px;
+        }
+        #loc_pic1, #loc_pic2, #loc_pic3, #loc_pic4 ,#loc_pic5  {
+
+          top: -1;
+        }
+        #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
+
+          top: 150;
+          width: 180px;
+
+          /* add new */
+          font-size: 12px;
+
+        }
+        #radio_dot1,#radio_dot2,#radio_dot3,#radio_dot4,#radio_dot5 {
+
+          top: 300;
+        }
+
+        #label_dot1, #label_dot2, #label_dot3, #label_dot4, #label_dot5 {
+
+
+          top: 280;
+          padding-left: 0;
+
+          /* add new */
+          font-size: 12px;
+        }
+
+
+        #booking_form{
+          padding-top: 40px;
+          padding-left: 50px;
+        }
+        img{
+          padding-left: 10px;
+          width: 160;
+          height: 120;
+        }
+        #site_info{
+          padding-bottom: 2px;
+          margin-bottom: 2px;
+          height: 120px;
+
+        }
+        #select_hol{
+
+          padding-top: 0;
+          margin-bottom: 0;
+
+        }
+        h1, h4{
+          font-size: 98%;
+        }
+
+        #About{
+          padding-left: 50px
+        }
+
+        #site_design {
+          padding-left: 50px
+        }
+        #external_res{
+          padding-left: 50px
+        }
+        #Contact{
+
+            padding-left: 50px
+        }
+        /*add new */
+        ul > li {
+
+          font-size: 12px;
+        }
+        /*add new*/
+        .hero-content{
+          padding-left: 50px;
+        }
+        /*add new */
+        #site_info{
+          font-size: 12px;
+          width: 500px;
+        }
+        #site_design{
+          font-size: 12px;
+        }
+        #external_res{
+          font-size: 12px;
+        }
+        #About > h2{
+          font-size: 20px;
+        }
+
+        .footer-content > h3{
+          font-size: 20px;
+        }
+        .footer-content > p{
+          font-size: 12px;
+          width: 500px;
+        }
+        #hol_btn{
+          font-size: 12px;
+        }
+        #hol_picked{
+          font-size: 12px;
+        }
+        .container-fluid{
+            padding: 0 !important;
+              margin:  0 !important;
+        }
+        #top_text > h2{
+
+          font-size: 20px;
+        }
+
+
+        #top_text > h4{
+
+          font-size: 12px;
+        }
+        #about_info > h4 {
+          font-size: 15px;
+          font-weight: bold;
+        }
+        #about_info > p {
+          font-size: 15px;
+
+        }
+        #contact_info > h4{
+          font-size: 15px;
+          font-weight: bold;
+        }
+        #contact_info > p {
+          font-size: 15px;
+
+        }
+        #resources_info > h4{
+          font-size: 15px;
+          font-weight: bold;
+        }
+        #resources_info > p{
+          font-size: 15px;
+
+        }
+        #resources_info{
+          display: none;
+        }
+       
+
+
+    }
    
    
   }
