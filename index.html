@@ -31,7 +31,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="#"><strong>Customer name: </strong> <br><span id="cust_name"></span></a>
                         <a class="dropdown-item" href="#"><strong>Holiday accomdation: </strong> <br><span id="selected_lodging"></span></a>
-                        <a class="dropdown-item" href="#"><strong>Date: </strong> <br></a>
+                        <a class="dropdown-item" href="#"><strong>Date: </strong> <br> <span id="selected_date"></span></a>
                         <a class="dropdown-item" href="#"><strong>Flying with: </strong><br><span id="flyin_airline"></span></a>
                     </div>
                 </li>
@@ -179,6 +179,9 @@
                    <label for="resort">Choose Resort:</label>
                    <select name="hol_picked" id="resort">
                    </select>
+                   <br>
+                   <label for="hol_date">Date of Departure:</label>
+                   <input type="date" id="hol_date" name="hol_date">
                    <br>
                    <label for="airlines">Choose Airline:</label>
                    <select name="airline_picked" id="airlines" style="width: 150px;"></select>

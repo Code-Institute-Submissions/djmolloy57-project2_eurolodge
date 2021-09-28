@@ -6,6 +6,7 @@ window.addEventListener("load", function(){
      document.getElementById("cust_name").innerHTML=localStorage.getItem("customername_value");
      document.getElementById("selected_lodging").innerHTML=localStorage.getItem("accomdation_value");
      document.getElementById("flyin_airline").innerHTML=localStorage.getItem("airline_value");
+     document.getElementById("selected_date").innerHTML=localStorage.getItem("date_value");
 
      if (div_display_state === "flex"){
       country_divs.style.display = "none";
@@ -816,19 +817,22 @@ window.onresize = reportWindowSize;
  {
    var customer_name = document.getElementById("formName").value;
    var accomodation_name = document.getElementById("resort").value;
-    
-   alert("I am in the passvalue funtcion");
+   var date_goin = document.getElementById("hol_date").value;
+
+   alert("I am in the passvalue funtcion date picked was " + date_goin);
 
    var select = document.getElementById('airlines');
    var selected_airline = select.options[select.selectedIndex].value;
 
    localStorage.setItem("customername_value",customer_name);
    localStorage.setItem("accomdation_value",accomodation_name);
+   localStorage.setItem("date_value", date_goin);
    localStorage.setItem("airline_value",selected_airline);
    
    document.getElementById("cust_name").innerHTML=localStorage.getItem("customername_value");
    document.getElementById("selected_lodging").innerHTML=localStorage.getItem("accomdation_value");
    document.getElementById("flyin_airline").innerHTML=localStorage.getItem("airline_value");
+   document.getElementById("selected_date").innerHTML=localStorage.getItem("date_value");
 
    alert("Your details are booked!! Please see Booking History Menu");
 
