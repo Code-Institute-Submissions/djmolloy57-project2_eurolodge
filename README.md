@@ -53,8 +53,8 @@ A booking button is available to click on  which shows a form with the options(d
 ## Skeleton
 In the main the wireframes more or less match my final project.
 See links to relevent section of the wireframes below:
-* desktop: <a href="wireframes/wireframe1_desktop.png" target="_blank" >Desktop Wireframe</a>
-* mobile:  <a href="wireframes/wireframe2_mobile.png" target="_blank" >Mobile Wireframe</a>
+* desktop: <a href="wireframe/wireframe1_desktop.png" target="_blank" >Desktop Wireframe</a>
+* mobile:  <a href="wireframe/wireframe2_mobile.png" target="_blank" >Mobile Wireframe</a>
 
 ##  Images
 The images were choosen to convey a holiday vibe to entice the visitor to check out the site options. The images also blended in well with the 
