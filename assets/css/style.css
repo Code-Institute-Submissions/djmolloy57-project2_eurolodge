@@ -606,6 +606,26 @@ and (-webkit-min-device-pixel-ratio: 1) {
     display: none;
   }
 }
+/* Galaxy Tab 10.1 portrait */
+@media 
+  (max-device-width: 800px) 
+  and (orientation: portrait) { 
+
+}
+
+/* Galaxy Tab 10.1 landscape */
+@media 
+  (max-device-width: 1280px) 
+  and (orientation: landscape) { 
+   
+    nav{
+      width: 1250px;
+    }
+    footer{
+      width: 1250px;
+    }
+}
+
   /* laptop/desktop media query */
   @media (min-width: 1025px){
 
