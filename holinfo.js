@@ -58,9 +58,7 @@ window.onresize = reportWindowSize;
 
   hol_btn.onclick = (event) => {
         document.getElementById("hol_btn").disabled = true;
-        event.preventDefault();
-        console.log(hol_picked.value);
-        
+        event.preventDefault();        
       
         getholCountry(hol_picked.value);
   };
@@ -408,7 +406,6 @@ window.onresize = reportWindowSize;
     if(hol_type === 'Skiing'){
       options = ["Andorra", "Austria", "France", "Italy","Switzerland"];
       
-      alert("You picked skiing");
       display_country_info(options);
     }
     if(hol_type === 'Beach'){
@@ -763,7 +760,7 @@ window.onresize = reportWindowSize;
   function country_map(type_hol,loc_radius ,selected_lat,selected_lng, map_div, button_div ,airlines_arr){
     var device_view_map = "";
     
-    alert("I am in country map function passing params over to initializer function for google maps");
+    
     //check the device views site is larger than mobile view then map div will be using the div map_desktop at center of screen 
     var query = window.matchMedia("(min-width: 601px)");
     if (query.matches){
