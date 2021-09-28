@@ -773,9 +773,24 @@ and (-webkit-min-device-pixel-ratio: 1) {
   #contact_info ul {
     padding-left: 2px;
   }
+  .navbar-brand{
+    font-size: 25px ;
+  }
+  .nav-link{
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  #top_text > h1{
+     font-size: 22px;
+     width: 550px;
+  }
+  #top_text > h4{
+    font-size: 15px;
 
 
+  }
 }
+/* ipad landscape */
 @media only screen
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
