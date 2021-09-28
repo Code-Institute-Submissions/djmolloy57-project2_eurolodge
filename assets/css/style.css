@@ -3,17 +3,14 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0px;
 }
-/*new*/
 #hero{
   margin-left: 0px;
   padding-left: 0px;
 }
-
 #map_desktop {
   height: 0px;
   width: 0px;
-  display: none;
-  
+  display: none;  
 }
 #map1{
   height: 0px;
@@ -24,8 +21,7 @@ body{
   height: 0px;
   width: 0px;
   display: none;
-}
-  
+}  
 #map3{
   height: 0px;
   width: 0px;
@@ -35,43 +31,33 @@ body{
   height: 0px;
   width: 0px;
   display: none;
-}
-  
+}  
 #map5{
   height: 0px;
   width: 0px;
   display: none;
 }
-
 #hol_display {
   display: flex;
 }
 .hol_image {
   display: flex;
 }
-
 #resort{
     width: 150px;
 }
-  /* added new*/
 #select_hol{
-
   margin-left: 0px;
   padding-left: 0px;
 }
-    /*added new */
 #country1, #country2, #country3, #country4, #country5 {
-
-  position: relative;    
-  
+  position: relative;      
 }
-#resort{
-      
+#resort{      
   width: 150px;
 }
 
-
-/* iphone 6,7,8 Landscape */
+/* iphone Media Query 6,7,8 Landscape */
 @media only screen
 and (min-device-width: 375px)
 and (max-device-width: 667px)
@@ -82,41 +68,30 @@ and (orientation: landscape) {
       padding-left: 50px
     }
     .hero-content{
-
       padding-left: 50px;
       padding-top: 10px;
       margin-bottom: 10px;
-
     }
     .hol_image {
       flex-direction: row;
-
-
     }
     #hol_display{
       flex-direction: row;
     }
-
     p{
-
         font-size: 0.8em;
         text-align: left;
         padding: 10px 0 0 0;
-
     }
-
     #map_desktop{
       height: 500px !important;
       width: 600px !important;
-
     }
     #book_button{
       padding-top: 5px !important;
       padding-left: 5px !important;
       padding-bottom: 10px !important;
-
     }
-
     .botton_padding {
       margin-bottom: 5px !important;
       padding-bottom: 5px !important;
@@ -127,51 +102,31 @@ and (orientation: landscape) {
       max-width: 70%;
       max-height: 70%;
     }
-
-
     #country1, #country2, #country3, #country4, #country5 {
-
       height: 330px !important;
       width: 180px !important;
-
-     
-      /*add new*/
       padding-top: 20px;
       margin-top: 20px;
-
       padding-bottom: 20px;
       margin-bottom: 20px;
       max-height: 400px;
     }
     #loc_pic1, #loc_pic2, #loc_pic3, #loc_pic4 ,#loc_pic5  {
-
       top: -1;
     }
     #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
-
       top: 150;
       width: 180px;
-
-      /* add new */
       font-size: 12px;
-
     }
     #radio_dot1,#radio_dot2,#radio_dot3,#radio_dot4,#radio_dot5 {
-
       top: 300;
     }
-
     #label_dot1, #label_dot2, #label_dot3, #label_dot4, #label_dot5 {
-
-
       top: 280;
       padding-left: 0;
-
-      /* add new */
       font-size: 12px;
     }
-
-
     #booking_form{
       padding-top: 40px;
       padding-left: 50px;
@@ -185,22 +140,17 @@ and (orientation: landscape) {
       padding-bottom: 2px;
       margin-bottom: 2px;
       height: 120px;
-
     }
     #select_hol{
-
       padding-top: 0;
       margin-bottom: 0;
-
     }
     h1, h4{
       font-size: 98%;
     }
-
     #About{
       padding-left: 50px
     }
-
     #site_design {
       padding-left: 50px
     }
@@ -208,14 +158,11 @@ and (orientation: landscape) {
       padding-left: 50px
     }
     #Contact{
-
         padding-left: 50px
     }
-   
     .hero-content{
       padding-left: 50px;
     }
-    /*add new */
     #site_info{
       font-size: 12px;
       width: 500px;
@@ -229,7 +176,6 @@ and (orientation: landscape) {
     #About > h2{
       font-size: 20px;
     }
-
     .footer-content > h3{
       font-size: 20px;
     }
@@ -248,11 +194,8 @@ and (orientation: landscape) {
           margin:  0 !important;
     }*/
     #top_text > h2{
-
       font-size: 15px !important;
     }
-
-
     #top_text > h4{
 
       font-size: 12px !important;
@@ -263,7 +206,6 @@ and (orientation: landscape) {
     }
     #about_info > p {
       font-size: 15px;
-
     }
     #contact_info > h4{
       font-size: 15px;
@@ -271,7 +213,6 @@ and (orientation: landscape) {
     }
     #contact_info > p {
       font-size: 15px;
-
     }
     #resources_info > h4{
       font-size: 15px;
@@ -279,7 +220,6 @@ and (orientation: landscape) {
     }
     #resources_info > p{
       font-size: 15px;
-
     }
     #resources_info{
       display: none;
@@ -292,11 +232,9 @@ and (orientation: landscape) {
     }
     #about_info > h4{
       font-size: 20px;
-  
     }
     #about_info > p{
       font-size: 12px;
-  
     }
     #contact_info > h4{
       font-size: 20px;
@@ -321,10 +259,7 @@ and (orientation: landscape) {
     #contact_info ul {
       padding-left: 2px;
     }
-
 }
-
-
 
 /*mobile phone media query */
 @media (max-width: 480px) {
@@ -332,10 +267,8 @@ and (orientation: landscape) {
   #hero{
     padding-left: 10px;
   }
-
   .hol_image{
     flex-direction: column;
-
   }
   #hol_display{
     flex-direction: column;
@@ -344,13 +277,11 @@ and (orientation: landscape) {
     padding-left: 10px;
   }
   #booking_form {
-    padding-left: 10px;
-    
+    padding-left: 10px;  
   }
   #About{
     padding-left: 10px
   }
-
   #site_design {
     padding-left: 10px
   }
@@ -358,15 +289,12 @@ and (orientation: landscape) {
     padding-left: 10px
   }
   #Contact{
-  
     padding-left: 10px
   }
-  #map1,#map2,#map3,#map4,#map5{
-    
+  #map1,#map2,#map3,#map4,#map5{   
     height: 60%;
     width: 60%;
     margin-left: 10px;
-
   }
   #button1,#button2,#button3,#button4,#button5{
     padding-top: 5px;
@@ -384,15 +312,11 @@ and (orientation: landscape) {
     padding-left: 2px;
   }
   #top_text > h2{
-
     font-size: 15px;
   }
-
   #top_text > h4{
-
     font-size: 12px;
     width: 350px !important;  
-  
   }
   #top_text > h1{
     font-size: 15px;
@@ -409,11 +333,9 @@ and (orientation: landscape) {
   }
   #about_info > h4{
     font-size: 20px;
-
   }
   #about_info > p{
     font-size: 12px;
-
   }
   #contact_info > h4{
     font-size: 20px;
@@ -437,37 +359,29 @@ and (orientation: landscape) {
 and (min-device-width: 598px)
 and (max-device-width: 1024px)
 and (-webkit-min-device-pixel-ratio: 1) {
-
+  
   #hero {
     padding-left: 50px
   }
   .hero-content{
-
     padding-left: 50px;
     padding-top: 10px;
     margin-bottom: 10px;
-
   }
-
   p{
-
       font-size: 0.8em;
       text-align: left;
-      padding: 10px 0 0 0;
-   
+      padding: 10px 0 0 0;  
   }
-
   #map_desktop{
     height: 500px !important;
-    width: 700px !important;
-   
+    width: 700px !important;   
   }
   #book_button{
     padding-top: 5px !important;
     padding-left: 5px !important;
     padding-bottom: 10px !important;
   }
-
   .botton_padding {
     margin-bottom: 5px !important;
     padding-bottom: 5px !important;
@@ -481,36 +395,27 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 
   #country1, #country2, #country3, #country4, #country5 {
-
     height: 350px;
     width: 500px;
-
     padding-bottom: 20px;
     margin-bottom: 20px;
     max-height: 400px; 
   }
   #loc_pic1, #loc_pic2, #loc_pic3, #loc_pic4 ,#loc_pic5  {
-
     top: -1;
   }
   #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
-
     top: 150;
   }
   #radio_dot1,#radio_dot2,#radio_dot3,#radio_dot4,#radio_dot5 {
-
     top: 300;
   }
-
   #label_dot1, #label_dot2, #label_dot3, #label_dot4, #label_dot5 {
-
-
     top: 280;
     padding-left: 0;
   }
 
-  #booking_form{
-   
+  #booking_form{   
     padding-left: 50px;
   }
   img{
@@ -522,22 +427,17 @@ and (-webkit-min-device-pixel-ratio: 1) {
     padding-bottom: 2px;
     margin-bottom: 2px;
     height: 120px;
-
   }
-  #select_hol{
-    
+  #select_hol{    
     padding-top: 0;
     margin-bottom: 0;
-
   }
   h1, h4{
     font-size: 98%;
-  }
-  
+  } 
   #About{
     padding-left: 50px
   }
-
   #site_design {
     padding-left: 50px
   }
@@ -545,7 +445,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     padding-left: 50px
   }
   #Contact{
-  
       padding-left: 50px
   }
   #site_design > p{
@@ -557,7 +456,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
   #About > h2{
     font-size: 15px;
   }
-
   .footer-content > h3{
     font-size: 20px;
   }
@@ -584,7 +482,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
   }
   #hero > a{
     padding-left: 20px;
-
   }
   #contact_info ul >li i{
     font-size: 170%;
@@ -610,13 +507,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
   }
   #top_text > h4{
     font-size: 15px;
-
-
   }
   #span_icon{
     display: none;
   }
-  
 }
 /* ipad landscape */
 @media only screen
@@ -637,7 +531,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
   #About > h2{
     font-size: 15px;
   }
-
   .footer-content > h3{
     font-size: 20px;
   }
@@ -712,24 +605,18 @@ and (-webkit-min-device-pixel-ratio: 1) {
   #span_icon{
     display: none;
   }
-
-
 }
-
   /* laptop/desktop media query */
   @media (min-width: 1025px){
 
     .hol_image {
-      flex-direction: row;
-      
-  
+      flex-direction: row;     
     }
     #hol_display{
       flex-direction: row;
     }
     .hol_ski{
-      padding-right: 10px;
-     
+      padding-right: 10px;     
     }
     .hol_beach{
       padding-right: 10px;
@@ -740,17 +627,14 @@ and (-webkit-min-device-pixel-ratio: 1) {
     p{
       color: black;
       font-size: 1em;
-      text-align: left;
-     
+      text-align: left;    
     }
     #hero {
       padding-left: 150px
     }
 
     .hero-content{
-
       padding-left: 150px
-
     }
     #booking_form {
       padding-left: 150px;
@@ -766,8 +650,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     #external_res{
       padding-left: 150px
     }
-    #Contact{
-    
+    #Contact{    
         padding-left: 150px
     }
     #desktop_container{
@@ -789,26 +672,17 @@ and (-webkit-min-device-pixel-ratio: 1) {
    #contact_info ul > li{
     display: inline-block;
     margin-right: 50px;
-  }
-  
-   
+  }     
    #contact_info ul {
      padding-left: 2px;
    }
    #top_text > h2{
-
     font-size: 20px;
-  }
-
-  #top_text {
-     
-
   }
   #top_text > h4{
 
     font-size: 18px;
-    width: 950px !important;  
-    
+    width: 950px !important;      
   }
   #top_text > h1{
     font-size: 25px;
@@ -826,7 +700,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
   #select_hol{
     padding-top: 5px !important; 
     margin-top: 5px !important; 
-
   }
   #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
     width: 260px;
