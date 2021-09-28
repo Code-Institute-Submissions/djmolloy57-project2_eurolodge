@@ -310,6 +310,17 @@ and (orientation: landscape) {
     #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
       font-size: 12px;
     }
+    #contact_info ul >li i{
+      font-size: 150%;
+      color: white;
+    }
+    #contact_info ul > li{
+      display: inline-block;
+      margin-right: 30px;
+    }
+    #contact_info ul {
+      padding-left: 2px;
+    }
 
 }
 
@@ -602,6 +613,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
 
 
   }
+  #span_icon{
+    display: none;
+  }
+  
 }
 /* ipad landscape */
 @media only screen
@@ -668,11 +683,34 @@ and (-webkit-min-device-pixel-ratio: 1) {
   }
  
   #contact_info ul >li i{
-     font-size: 50%;
+     font-size: 140%;
   }
   #contact_info ul > li{
    display: inline-block;
     margin-right: 20px;
+  }
+  nav{
+    width: 1250px;
+  }
+  footer{
+    width: 1250px;
+  }
+  #top_text > h2{
+    font-size: 20px;
+  }
+  #top_text > h4 {
+    width: 990px;
+    font-size: 15px;
+  }
+  #site_info {
+    width: 990px;
+    font-size: 15px;
+  }
+  .hol_image{
+    padding-left: 250px;
+  }
+  #span_icon{
+    display: none;
   }
 
 
