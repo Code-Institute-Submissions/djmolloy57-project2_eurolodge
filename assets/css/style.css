@@ -107,7 +107,7 @@ and (orientation: landscape) {
 
     #map_desktop{
       height: 500px !important;
-      width: 700px !important;
+      width: 600px !important;
 
     }
     #book_button{
@@ -131,9 +131,10 @@ and (orientation: landscape) {
 
     #country1, #country2, #country3, #country4, #country5 {
 
-      height: 350px;
-      width: 500px;
+      height: 330px !important;
+      width: 180px !important;
 
+     
       /*add new*/
       padding-top: 20px;
       margin-top: 20px;
