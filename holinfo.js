@@ -65,17 +65,14 @@ window.onresize = reportWindowSize;
         getholCountry(hol_picked.value);
   };
 
-  hol_btn.onchange = () => {
-
-    alert("changing event!!!");
-  }
+ 
 
   function enablebutton(){
     document.getElementById("hol_btn").disabled = false;
 
     var map_div = document.getElementById("hol_display"); //above link worked fix the map div to be visible
     var displayState = getComputedStyle(map_div).display;
-    console.log("changing HolidayType 1st holiday element is visible? " + displayState);
+    
 
     var div_desktop_container = document.getElementById("desktop_container");
     var div_desktop_book_button = document.getElementById("book_button");
@@ -134,13 +131,13 @@ window.onresize = reportWindowSize;
     /*To determine if you are in desktop view or mobile view - desktop view on have to hide the desktop container
       else you are in mobile view and their may have been a number of map location that have been generated on last holiday choice and have to be removed!!
     */
-    alert("whats display state: " + displayState);
+ 
     if (is_DesktopMap_Div()){
-        alert("Your in desktop view!!");
+      
         var desktop_container_map =  document.getElementById("desktop_container");
         desktop_container_map.style.display = "none";
     }else{
-        alert("Your in mobile view!!");
+        
         map_div.style.display = "none";
         var map_div_parent_node = document.getElementById('hol_display').children;
         if (map_div.children.length > 0){
@@ -241,8 +238,7 @@ window.onresize = reportWindowSize;
             "pic" : "assets/images/pexels-switzerland-skiing.jpeg"  
           }
       ],
-
-      //36.7212° N, 4.4217° 
+ 
       "Southern_Spain": [
         {
           "coords": { "lat": "36.7212","lng":"4.4217"},
@@ -257,11 +253,11 @@ window.onresize = reportWindowSize;
     ],
     
     "Portugal": [
-     //37.1028° N, 8.6730
+
         {
           "coords": { "lat": "37.1028","lng":"8.6730"},
           "content": "Portugal",
-          "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
+          "Hol_type": "beach", 
           "info": "Portugal Its location on the Atlantic Ocean has influenced many aspects of its culture: salt cod and grilled sardines are national dishes, the Algarve's beaches are a major destination. You will find great value from the many budget friendly accommodation.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Tap Air","British Airways"],
           "loc_radius" : "120000", //50miles
@@ -270,11 +266,11 @@ window.onresize = reportWindowSize;
 
     ],
     "Southern_France": [
-   //43.2548° N, 6.6379° E
+
         {
           "coords": { "lat": "43.2548","lng":"6.6379"},
           "content": "Southern France",
-          "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
+          "Hol_type": "beach", 
           "info": "Beaches in the south of France are a great choice for brilliant weather. The area is know for vibrant towns and great cuisine. South of France is more expensive than locations like Portugal and Spain, however its charm and stunning beaches makes it worth it.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Air France","British Airways"],
           "loc_radius" : "120000", //50miles
@@ -288,39 +284,39 @@ window.onresize = reportWindowSize;
         {
           "coords": { "lat": "40.8518","lng":"14.2681"},
           "content": "Southern Italy",
-          "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
+          "Hol_type": "beach", 
           "info": "Southern Italy with its Mediterranean climate, the southern region is a popular destination for beach holidays in Italy even during the off-peak autumn months. Explorer the beautiful Amalfi Coastline with its beaches and the wonderful cuisine.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Air Italia","British Airways"],
           "loc_radius" : "120000", //50miles
-          "pic" : "assets/images/pexels-southern-italy-beach2.jpeg"  //will need to be an array
+          "pic" : "assets/images/pexels-southern-italy-beach2.jpeg"  
         }
 
     ],
-    //42.6507° N, 18.0944
+  
     "Croatia": [
 
         {
           "coords": { "lat": "42.6507","lng":"18.0944"},
           "content": "Croata",
-          "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
+          "Hol_type": "beach", 
           "info": "Croatia nestled alongside the breathtaking azure waters of the Adriatic Sea, the country is incredibly diverse, with a number of gorgeous beaches and island retreats. You can find both luxury to budget-friendly accomodation and it has many vibrant towns.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","RyanAir","British Airways"],
           "loc_radius" : "120000", //50miles
-          "pic" : "assets/images/pexels-croatia-beach1.jpeg"  //will need to be an array
+          "pic" : "assets/images/pexels-croatia-beach1.jpeg"  
         }
 
     ],
-    //37.9838° N, 23.7275° E
+
     "Greece": [
 
         {
           "coords": { "lat": "37.9838","lng":"23.7275"},
           "content": "Greece",
-          "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
-          "info": "Greece has many beautiful Islands with beautiful beaches and coves", //will need to be an array - Need different info each holiday type
+          "Hol_type": "beach",
+          "info": "Greece has many beautiful Islands with beautiful beaches and coves", 
           "airlines": ["Aer Lingus","EasyJet","British Airways"],
           "loc_radius" : "240000", //100miles
-          "pic" : "assets/images/greece.jpg"  //will need to be an array
+          "pic" : "assets/images/greece.jpg" 
         }
     ],
 
@@ -335,19 +331,6 @@ window.onresize = reportWindowSize;
         "pic" : "assets/images/pexels-berlin2.jpeg"  
       }
     ],
-
-    /*"Dublin": [
-      {
-      //"coords": { "lat": "53.3498","lng":"6.2603"},
-      "coords": { "lat": "53.33306","lng":"6.24889"},
-      "content": "Dublin",
-      "Hol_type": "tour",
-      "info": "Dublin city capital of Ireland, river liffey runs through it, friendy city, with famous pubs,hotels and restaurants", //will need to be an array - Need different info each holiday type
-      "airlines": ["Aer Lingus","RyanAir","British Airways"],
-      "loc_radius" : "12000", //5 miles remember to convert it to int when passing to google map api
-      "pic" : "assets/images/dublin1.jpg"  
-      }
-    ],*/
 
     "Barcelona": [
       {
@@ -410,18 +393,13 @@ window.onresize = reportWindowSize;
   hol_type to another function display_country_info
   */
   function getholCountry(hol_type){
-    //removeOptions(document.getElementById('selectNumber'));
-    var infodiv = document.getElementById('site_info'); //above link worked fix the map dive to be visible
+    
+    var infodiv = document.getElementById('site_info'); 
     var div_display_state = getComputedStyle(infodiv).display;
-
-    alert("I am in getholCountry!!");
-    /*alert("trying to generate map to div map1_1 the display state is " + display_state);// shows overflow state is showing as hidden*/
 
     if (div_display_state == "block") {
                 infodiv.style.display = "none";
-                /*mapdiv.style.height= "500px";
-                mapdiv.style.width= "800px";*/
-                /*alert("trying to generate map to div map1_1 the display state is " + display_state);*/
+                
     }
     console.log("in function getholCountry passed in holiday type is: " + hol_type);
     var options = [];
@@ -435,10 +413,9 @@ window.onresize = reportWindowSize;
     }
     if(hol_type === 'Beach'){
       options = ["Southern_Spain", "Portugal", "Southern_France", "Southern_Italy","Croatia" ,"Greece"];
-      //alert("Beach holiday type is picked!!");
+     
       display_country_info(options); //ERROR! at getholCountry (holinfo_javascript_test.js:431)
-
-      //  //Southern_Spain, Portugal, Southern_France, Southern_Italy, Croatia, Greece
+      
     }
     if(hol_type === 'City'){
       options= ["Berlin","Barcelona","London","Paris","Rome"];
@@ -455,10 +432,6 @@ window.onresize = reportWindowSize;
   */
   function initialize(holtype,loc_radius,lat,lng,device_map,button_div,airlines_arr) { 
 
-    
-    console.log("IN START OF MAP INITIALIZE function device_map is  " + device_map); //WORKING!!!
-
-    console.log("INITIALIZE MAP WITH COORDS " + lat + " " + lng);
 
     //ensure desktop map is displaying after it was previously set to display none by function enablebutton()
     var desktop_container_map =  document.getElementById("desktop_container");
@@ -486,6 +459,7 @@ window.onresize = reportWindowSize;
 
     //creates the google places api object by passing in the google map object
     var service = new google.maps.places.PlacesService(map);
+    
     //then using the google places api object calls its nearbySearch method with params request key value pairs (hol_type, radius and plot from center)
     //also includes calling a callback function
     service.nearbySearch(request,callback);
@@ -500,8 +474,9 @@ window.onresize = reportWindowSize;
                 mapdiv.style.display = "block";
                 mapdiv.style.height= "500px";
                 mapdiv.style.width= "800px";
-                /*alert("trying to generate map to div map1_1 the display state is " + display_state);*/
+   
     }
+
     /*else If div display is none and its its being viewed on a mobile device then display it with height 300px and width 400px in
     div id=map1 or id=map2 etc - depending which country is clicked
     */
@@ -531,7 +506,7 @@ window.onresize = reportWindowSize;
     }
     else if (display_state == "none" && device_map != "map_desktop"){
 
-      console.log("IN END OF MAP INITIALIZE function device_map is  " + device_map);
+   
       var container_mobile =  document.getElementById(button_div); //since non desktop referencing mobile button div button1, button2 ... 
   
       //to make sure button generated in mobile view are in display 'block' this condition will be used to remove old buttons when another holiday type is selected in mobile view
@@ -542,11 +517,9 @@ window.onresize = reportWindowSize;
 
 
     btn.onclick = function () {
-        alert("You want to book a resort in " + place_info[0].name);
-        //place_info=[];
-        /*added here 15:20 today add code below where book button info  is moved to booking forms dropdown */
+ 
+        /*add code below where book button info  is moved to booking forms dropdown */
         //This adds marker info on map - book button moves it to booking form resort dropdown
-        console.log("You want to book a resort in " + place_info[0].name + "going to loop through places to add to resort dropdown");
         var select = document.getElementById("resort");
         for(var i = 0; i < place_info.length; i++) {
           var opt = place_info[i].name;
@@ -560,20 +533,13 @@ window.onresize = reportWindowSize;
         //This adds airlines which selected country moves it to booking form airlines dropdown
         //using the airlines_arr array which was passed into this initialize function 
         var airlines= document.getElementById("airlines");
-        ////const myObj = JSON.parse(airlines_arr);
-        
-        //new add
-        removeOptions(airlines);
-        
-        console.log("LOOOK HEEERE!!!");
-        console.log("1st element in Airlines array contains: " + airlines_arr.split(',')[0]);
-
+      
+        removeOptions(airlines);        
 
         for(var i = 0; i < airlines_arr.length; i++) {
-          var opts = airlines_arr.split(',')[i]; //got this from site - https://stackoverflow.com/questions/9133102/how-to-grab-substring-before-a-specified-character-jquery-or-javascript
+          var opts = airlines_arr.split(',')[i]; 
           console.log('An element of Airlines array taken from json data var: ' + opts);
           
-          //new add
           if(opts === undefined){
             continue;
           }
@@ -589,7 +555,7 @@ window.onresize = reportWindowSize;
     };
 
   }
-  //add new
+ 
   function removeOptions(selectElement) {
     var i, L = selectElement.options.length - 1;
     for(i = L; i >= 0; i--) {
@@ -600,13 +566,11 @@ window.onresize = reportWindowSize;
  
   function callback(results,status){
 
-    //add new
     var sel = document.getElementById('resort');
     for (i = sel.length - 1; i >= 0; i--){
         sel.remove(i);
     }
 
-    //add new
     if (place_info.length > 0) {
       place_info = [];
     }
@@ -620,7 +584,7 @@ window.onresize = reportWindowSize;
 
       }
     }
-    //console.log("callback assigned into array index 0: " + place_info[0].name);
+
 
   }
 
@@ -641,7 +605,7 @@ window.onresize = reportWindowSize;
 
       });
     }
-    /*added listener on click on marker to show places info*/ 
+
     marker.addListener('click', function(){
       infoWindow.open(map, marker);
   
@@ -685,19 +649,16 @@ window.onresize = reportWindowSize;
            var loc_coords_lat =  data.country[hol_countries[loc]][i].coords.lat;
            var loc_coords_lng = data.country[hol_countries[loc]][i].coords.lng;
            var place = data.country[hol_countries[loc]][i].content;
-           console.log("referencing " + hol_countries[loc] + " PLACE PICKED in the data json object which are " + place);
-
+           
            var type_hol = data.country[hol_countries[loc]][i].Hol_type;
            var type_info = data.country[hol_countries[loc]][i].info;
            var type_pic = data.country[hol_countries[loc]][i].pic;
 
            var airlines_arr =  data.country[hol_countries[loc]][i].airlines;
            var loc_radius = data.country[hol_countries[loc]][i].loc_radius;
-           
-           console.log('COUNTRY : ' + place + ', latitude= ' +  loc_coords_lat + ',  longtitude = ' + loc_coords_lng + ' , ' + type_hol + ' , info: ' + type_info + ' resort pic: ' + type_pic + ' one of the airlines who flies there ' + airlines_arr);
-                    
+                               
            var tag = document.createElement("p");
-           //var text = document.createTextNode("COUNTRY : " + place + "<br> latitude= " +  loc_coords_lat + "  longtitude = " + loc_coords_lng + " Holiday type: " + type_hol + " info: " + type_info);
+         
            var text = document.createTextNode("info: " + type_info);
            
            tag.setAttribute('id', 'loc_info' + attr_num);
@@ -826,8 +787,6 @@ window.onresize = reportWindowSize;
    var customer_name = document.getElementById("formName").value;
    var accomodation_name = document.getElementById("resort").value;
    var date_goin = document.getElementById("hol_date").value;
-
-   alert("I am in the passvalue funtcion date picked was " + date_goin);
 
    var select = document.getElementById('airlines');
    var selected_airline = select.options[select.selectedIndex].value;

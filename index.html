@@ -13,14 +13,16 @@
   </head>
   <body>
     <div id="hero">
+      <!-- Nav Bar with Website Brand -->
       <nav class="navbar navbar-light big-light navbar-expand-sm bg-primary">
         <a href="#hero" class="navbar-brand"><span id="span-space"></span>EUROHOL</a>
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span></button>
 
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                 
               <ul class="navbar-nav mr-auto">
-             <!--new add bootsrap class to li -->
+               <!-- Nav links -->
                 <li class="active nav-item mr-2"><a class="nav-link" href="#hero">Home</a></li>
                 <li classs="nav-item mr-2"><a class="nav-link" href="#select_hol">Select Holiday</a></li>
                 <li class="nav-item mr-2"><a class="nav-link" href="#about_info">About</a></li>
@@ -43,6 +45,7 @@
         
       </nav>
     </div>
+    <!-- Website Details-->
     <div class="row hero-content pt-lg pb-lg-2 pt-2">
       <div class="col-md-6 col-sm-12" id="top_text">
         <h2>Find your Ideal European Holiday Lodging Here!</h2>
@@ -73,6 +76,7 @@
 
       </div>
     </div>
+    <!--Main part of site visitor/user will choose holiday type -->
     <section id="country_section">
       <div class="container">
         <br>
@@ -82,7 +86,6 @@
           <br>
           <label for="country">Choose Holiday type:</label>
           <select name="hol_picked" id="hol_picked" onchange="enablebutton()">
-          <!--<select name="hol_picked" id="hol_picked">-->
             <option value="Skiing">Skiing</option>
             <option value="Beach">Beach</option>
             <option value="City">City Tour</option>
@@ -90,6 +93,7 @@
           <button id="hol_btn">Get info</button>
         </div>
         <br>
+        <!-- Based on choice information will placed here by backend  --->
         <div class="row" id="hol_display">
             <div id="country1" class="col-md-4 col-lg-4">
             </div>
@@ -131,7 +135,7 @@
 
     </section>
  
-    
+    <!-- Footer -->
     <footer class="bg-primary text-white">
       <div class="container py-3" id="footer_size">
         <div class="row">
@@ -161,6 +165,8 @@
       </div>
 
     </footer>
+
+    <!-- Booking Form to select countries hotel/accomdation choice and airline -->
     <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -171,20 +177,20 @@
                   </button>
               </div>
               <div class="modal-body">
-                <!--<form action="Booking-history.html" target="_blank">-->
+               
                 <form>
                    <label for="formName">Name:</label>
-                   <input type="text" id="formName">
+                   <input type="text" id="formName" required>
                    <br>
                    <label for="resort">Choose Resort:</label>
-                   <select name="hol_picked" id="resort">
+                   <select name="hol_picked" id="resort" required>
                    </select>
                    <br>
                    <label for="hol_date">Date of Departure:</label>
-                   <input type="date" id="hol_date" name="hol_date">
+                   <input type="date" id="hol_date" name="hol_date" required>
                    <br>
                    <label for="airlines">Choose Airline:</label>
-                   <select name="airline_picked" id="airlines" style="width: 150px;"></select>
+                   <select name="airline_picked" id="airlines" style="width: 150px;" required></select>
 
                    <br>
                    <input type="submit" class="btn btn-success" value="Submit Booking" onclick="passvalues();">
