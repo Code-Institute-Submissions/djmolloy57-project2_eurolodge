@@ -25,10 +25,11 @@ The object of the website is to inform visitor of different locations around Eur
 
 ### Business Goals
 *  External user goals: <br>
-   The site’s user are visitors looking to find information on holidaying    around Europe according to holiday type (beach, city and skiing holidays)
+   The site’s user are visitors looking to find information on holidaying around Europe according to holiday type (beach, city and skiing holidays)
    Then book holiday based on their choice of holiday.
 
 * Site owner's goal: <br>
+   To offer a site which is intuitive, easy to use for users. Where visitors can effortlessly find the lodging/accommodation for there choosen holiday type with minimum effort.
 
 ## User Stories
 * As a First Time Visitor: <br>
@@ -37,9 +38,6 @@ The object of the website is to inform visitor of different locations around Eur
 “I  would like to find where I can book a skiing holiday resort choices around Europe”
 
 “I  would like to book a holiday in Europe based on resort site information recommendations”
-
-* As a Regular Visitor:
-
 
 ## Scope
 This website incorporate Minimal Viable Product (MVP) elements.
@@ -57,20 +55,25 @@ In the main the wireframes more or less match my final project.
 See links to relevent section of the wireframes below:
 
 ##  Images
-The images were choosen to convey a holiday vibe to entice the visitor 
-to check out the site options. The images also blended in well with the 
+The images were choosen to convey a holiday vibe to entice the visitor to check out the site options. The images also blended in well with the 
 sites colour scheme.
 
 ## Colours
-I choose blue backcolour for the site title page. For the navigation bar
-I choose grey buttons with white black for site title on the button. When the vistors moves/hovers the mouse pointer over the button it changes/transitons to black once mouse moves away its returns to grey colour this is to provide a better UX experience for the user.
+I choose sky blue as background colour for the site. For the navigation bar and footer I choose a slightly darker blue. I feel this offers an easy on the eye
+contrast.
 
 ## Typography
-I used Google fonts to enhance some text sections of the site. I decided on 
-Abril with backup sans-serif for text headings on the home page.
+I used Google fonts to enhance some text sections of the site. I decided on Roboto with backup sans-serif for text headings on the home page.
 
 # Features
-
+  
+  The site requires minimum input from the user<br>
+    * Visitor/user selects a holiday type from the dropdown (Skiing, Beach or City Tour) then click's Get info button.<br>
+    * The Get info button returns the countries that offer such holidays, the customer can choose a county and generate map.<br>
+    * This map will show marker at different locations on the map. Clicking the map will provide information such as the name of the accommodation and its star rating.<br>
+    * Clicking on the book button it will show a popup form asking for his name,a dropdown which contains the marker location name (Hotel, guesthouses), the date  
+      he is looking to go, the airline choice. Once submitted it held in the Booking History menu option.<br>
+      
 
 # Technologies Used
 
@@ -84,10 +87,8 @@ Abril with backup sans-serif for text headings on the home page.
 * Bootstrap – to separate site into even grid sections. This allowed greater consistency in layout when interacting with site. 
 
 
-
 * javascript
     * For making the site dynamic based on options selected – manipulating DOM
-
 
 * google map/marker api
     * generating maps and markers based on site options
@@ -98,16 +99,18 @@ Abril with backup sans-serif for text headings on the home page.
       its url as a link in the head of site Pages.
     
 * Google Font
-    * to make Paragraph Heading on Home page look  clearer I used Abril font-family referencing https://fonts.google.com/ CDN<br>
+    * to make Paragraph Heading on Home page look clearer I used Roboto font-family referencing https://fonts.google.com/ CDN<br>
       in the style css.
 
 # Testing
 
 * Forms testing:<br>
-
-
+  Testing was done by me, error was found where booking was allowed to be submitted without name and date. This was fixed by adding required for all fields
+  in the form.
+  
 * Links (Internal & External): <br>
-
+  The only external links on the site is Social Media links and they were tested ok.
+  
 The following bug was found early on:<br>
 
 fixed code with:
@@ -115,26 +118,42 @@ fixed code with:
 tested and issue was fixed, commited change to github.
 
 Another issue:<br>
+For recording booking I use javascript local storage. In my testing I was checking the form fields as they were being passed to the function which looks after this
+with console logging, it was passing over the values and assigning them to local storage. However it was not showiing in the Booking History menu option page, instead 
+this was showing as blank.
 
 fixed by:
+By calling the window.addEventListener("load", function()  and assinging the localStorage.getItem to the specific Booking History fields.
+fixed code with:
+```
+   window.addEventListener("load", function(){
+     ....
+     document.getElementById("cust_name").innerHTML=localStorage.getItem("customername_value");
+     document.getElementById("selected_lodging").innerHTML=localStorage.getItem("accomdation_value");
+     document.getElementById("flyin_airline").innerHTML=localStorage.getItem("airline_value");
+     document.getElementById("selected_date").innerHTML=localStorage.getItem("date_value");
+    }
+```
+Ran the website url in responsive design site such as http://ami.responsivedesign.is
+Which shows the site rendering correctly accross different device screens. 
+http://ami.responsivedesign.is/?url=https://djmolloy57.github.io/project2_eurolodge/
 
-will run the website url in responsive design site such as http://ami.responsivedesign.is/#
-which shows the site rendering correctly accross different device screens.
+I ran the site url through Google Mobile Friendly Test which confirmed site is mobile friendly see link:
+https://search.google.com/test/mobile-friendly?id=VvnGk4nzNT3V0jJ9iwrycw
 
 
-will run the site url through Google Mobile Friendly Test which confirmed site is mobile friendly see link:
-https://search.google.com/test/mobile-friendly?utm_source=gws&utm_medium=onebox&utm_campaign=suit&id=R5w9HUS8MB2PJiTDutzfjg
-
-
-Will test the website on various device 
+I tested the website on various device 
 * Android mobile phones:  
   * Samsung: Galaxy A21e 
 
 * IOS mobile phone
   * iphone 7 
 
-* Android Tablet:  
-  *  Asus ZenPad 8.0 inch z380 1280 x 800px 
+* Android Samsung Tablet:  
+  *  Samsung Tab A 10.1 
+
+* Window Surface:
+  *  Windows Surface Go.
 
 * Mac OSX :
   * Mac Book Pro  
@@ -143,7 +162,7 @@ Will test the website on various device
   * Acer Nitro 15.6 inch - 1920x1080 IPS display
   * external 21 inch Samsung Monitor 1366 x 768
 
-Will test on the websites in the following browsers
+I tested on the websites in the following browsers
  * Chrome
  * Firefox
  * Safari
