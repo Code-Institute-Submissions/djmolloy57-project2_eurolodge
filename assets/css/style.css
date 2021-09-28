@@ -619,22 +619,22 @@ and (-webkit-min-device-pixel-ratio: 1) {
   and (orientation: landscape) { 
    
     nav{
-      width: 1285px;
+      width: 1400px;
     }
     footer{
-      width: 1285px;
+      width: 1400px;
     }
     #top_text{
-      padding-left: 5px;
-      margin-left: 5px;
+      padding-left: 0px;
+      margin-left: 0px;
     }
     .hol_image{
-      padding-left: 5px;
-      margin-left: 5px;
+      padding-left: 0px;
+      margin-left: 0px;
     }
     #site_info{
-      padding-left: 5px;
-      margin-left: 5px;
+      padding-left: 0px;
+      margin-left: 0px;
     }
 
 
