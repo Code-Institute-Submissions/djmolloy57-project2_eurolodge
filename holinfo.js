@@ -192,6 +192,7 @@ window.onresize = reportWindowSize;
             "Hol_type": "ski",
             "info": "Andorra is a independent principality situated between France and Spain in the Pyrenees mountains known budget ski resorts and a tax-haven that offers duty-free shopping.",
             "airlines": ["Air France","Lufthansa","RyanAir"],
+            "loc_radius" : "240000", //100miles
             "pic" : "assets/images/pexels-andorra-skiing.jpeg"
           }
        ],
@@ -202,6 +203,7 @@ window.onresize = reportWindowSize;
            "Hol_type": "ski",
            "info": "Austria's ski resorts are full of charm mostly pretty villages with onion-domed churches and a long tradition of hospitality beautiful ski areas with tree lined slopes and best lift system.",
            "airlines": ["Lauda Air","Lufthansa","RyanAir"],
+           "loc_radius" : "120000", //50miles
            "pic" : "assets/images/pexels-austria-skiing.jpeg"
          }
        ],
@@ -212,17 +214,19 @@ window.onresize = reportWindowSize;
             "Hol_type": "ski",
             "info": "France is a firm favourite for ski holidays loved for its excellent food and easy to reach resorts from the traditional to purpose built best-known ski areas many at high altitude.",
             "airlines": ["Aer Lingus","Air France","RyanAir"],
+            "loc_radius" : "120000", //50miles
             "pic" : "assets/images/pexels-france-skiing.jpeg"
         }
       ],
         "Italy": [
-    
+        
           {
-            "coords": { "lat": "41.8719","lng":"12.5674"},
+            "coords": { "lat": "45.9336","lng":"7.6298"},
             "content": "Italy",
             "Hol_type": "ski", 
             "info": "Ski holidays in Italy are all about relaxed and easy-going Italian hospitality, delicious gourmet food and variety scenic skiing across the resorts.",
             "airlines": ["Aer Lingus","Air Italia","British Airways"],
+            "loc_radius" : "120000", //50miles
             "pic" : "assets/images/pexels-italy-skiing.jpeg" 
           }
       ],
@@ -233,11 +237,12 @@ window.onresize = reportWindowSize;
             "Hol_type": "ski", 
             "info": "Switzerlands home to some of Europe’s best ski resorts. They are full of character, surrounded by breathtaking scenery and famous mountains.",
             "airlines": ["Aer Lingus","British Airways","Swiss Air"], 
+            "loc_radius" : "120000", //50miles
             "pic" : "assets/images/pexels-switzerland-skiing.jpeg"  
           }
       ],
 
-      
+      //36.7212° N, 4.4217° 
       "Southern_Spain": [
         {
           "coords": { "lat": "36.7212","lng":"4.4217"},
@@ -245,34 +250,34 @@ window.onresize = reportWindowSize;
           "Hol_type": "beach", 
           "info": "Spain is well known for its sun, sea and sand along the Costa del Sol. With clear blue skies and sunshine practically all year round. You will find budget friendly accommodation. Find out why holidays in the south of Spain are as popular as ever.",
           "airlines": ["Aer Lingus","Iberia","RyanAir"],
-          "loc_radius" : "240000", //100miles
+          "loc_radius" : "120000", //50miles
           "pic" : "assets/images/pexels-spain_beach1.jpeg"  
         }
 
     ],
     
     "Portugal": [
-
+     //37.1028° N, 8.6730
         {
-          "coords": { "lat": "38.7223","lng":"9.1393"},
+          "coords": { "lat": "37.1028","lng":"8.6730"},
           "content": "Portugal",
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
           "info": "Portugal Its location on the Atlantic Ocean has influenced many aspects of its culture: salt cod and grilled sardines are national dishes, the Algarve's beaches are a major destination. You will find great value from the many budget friendly accommodation.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Tap Air","British Airways"],
-          "loc_radius" : "240000", //100miles
+          "loc_radius" : "120000", //50miles
           "pic" : "assets/images/pexels-portugal-beach3-bestone.jpeg"  //will need to be an array
         }
 
     ],
     "Southern_France": [
-
+   //43.2548° N, 6.6379° E
         {
-          "coords": { "lat": "43.7102","lng":"7.2620"},
+          "coords": { "lat": "43.2548","lng":"6.6379"},
           "content": "Southern France",
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
           "info": "Beaches in the south of France are a great choice for brilliant weather. The area is know for vibrant towns and great cuisine. South of France is more expensive than locations like Portugal and Spain, however its charm and stunning beaches makes it worth it.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Air France","British Airways"],
-          "loc_radius" : "240000", //100miles
+          "loc_radius" : "120000", //50miles
           "pic" : "assets/images/pexels-southern-france.jpeg"  //will need to be an array
         }
 
@@ -286,7 +291,7 @@ window.onresize = reportWindowSize;
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
           "info": "Southern Italy with its Mediterranean climate, the southern region is a popular destination for beach holidays in Italy even during the off-peak autumn months. Explorer the beautiful Amalfi Coastline with its beaches and the wonderful cuisine.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","Air Italia","British Airways"],
-          "loc_radius" : "240000", //100miles
+          "loc_radius" : "120000", //50miles
           "pic" : "assets/images/pexels-southern-italy-beach2.jpeg"  //will need to be an array
         }
 
@@ -300,7 +305,7 @@ window.onresize = reportWindowSize;
           "Hol_type": "beach", //In latter version this will need to be an array to cover the other holiday types for Switzerland
           "info": "Croatia nestled alongside the breathtaking azure waters of the Adriatic Sea, the country is incredibly diverse, with a number of gorgeous beaches and island retreats. You can find both luxury to budget-friendly accomodation and it has many vibrant towns.", //will need to be an array - Need different info each holiday type
           "airlines": ["Aer Lingus","RyanAir","British Airways"],
-          "loc_radius" : "240000", //100miles
+          "loc_radius" : "120000", //50miles
           "pic" : "assets/images/pexels-croatia-beach1.jpeg"  //will need to be an array
         }
 
@@ -346,8 +351,8 @@ window.onresize = reportWindowSize;
 
     "Barcelona": [
       {
-
-      "coords": { "lat": "53.33306","lng":"6.24889"},
+        
+      "coords": { "lat": "41.3874","lng":"2.1686"},
       "content": "Barcelona",
       "Hol_type": "tour",
       "info": "Barcelona is an exciting blend of ancient city walls, 20th century architectural marvels, beach bliss and city buzz. Visit charming local neighbourhoods and fascinating architecture like Gaudí’s iconic Sagrada Familia.", //will need to be an array - Need different info each holiday type
@@ -448,7 +453,7 @@ window.onresize = reportWindowSize;
   /*
   This function initialize() takes in params that will be used in the google map api and google places api
   */
-  function initialize(holtype,lat,lng,device_map,button_div,airlines_arr) { 
+  function initialize(holtype,loc_radius,lat,lng,device_map,button_div,airlines_arr) { 
 
     
     console.log("IN START OF MAP INITIALIZE function device_map is  " + device_map); //WORKING!!!
@@ -470,12 +475,13 @@ window.onresize = reportWindowSize;
     // device_map (which maybe desktop ver or mobile ver)
     map = new google.maps.Map(document.getElementById(device_map), {
       center: center,
-      zoom: 7
+      types: ['lodging'],
+      zoom: 9
     });
     var request = {
       location: center,
-      radius: 1200047, //500 miles
-      keyword: holtype
+      radius: loc_radius,
+      //keyword: holtype
     };
 
     //creates the google places api object by passing in the google map object
@@ -686,7 +692,7 @@ window.onresize = reportWindowSize;
            var type_pic = data.country[hol_countries[loc]][i].pic;
 
            var airlines_arr =  data.country[hol_countries[loc]][i].airlines;
-
+           var loc_radius = data.country[hol_countries[loc]][i].loc_radius;
            
            console.log('COUNTRY : ' + place + ', latitude= ' +  loc_coords_lat + ',  longtitude = ' + loc_coords_lng + ' , ' + type_hol + ' , info: ' + type_info + ' resort pic: ' + type_pic + ' one of the airlines who flies there ' + airlines_arr);
                     
@@ -709,7 +715,7 @@ window.onresize = reportWindowSize;
 
            var button_div = "button" + map_num; //variable record button number eg button1, button2... to pass to country_map()
               
-           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+map_div +"','"+button_div +"','"+airlines_arr+"');");
+           radioYes.setAttribute("onclick","country_map('"+type_hol+"','"+loc_radius+"','"+loc_coords_lat+"','"+loc_coords_lng+"','"+map_div +"','"+button_div +"','"+airlines_arr+"');");
            
 
            var sel_generateMap = document.createElement("label");
@@ -793,7 +799,7 @@ window.onresize = reportWindowSize;
   }
  
  /*This function will be used to call a function to google map api */ 
-  function country_map(type_hol,selected_lat,selected_lng, map_div, button_div ,airlines_arr){
+  function country_map(type_hol,loc_radius ,selected_lat,selected_lng, map_div, button_div ,airlines_arr){
     var device_view_map = "";
     
     alert("I am in country map function passing params over to initializer function for google maps");
@@ -808,8 +814,10 @@ window.onresize = reportWindowSize;
     }
     console.log("device_view_map is: " + device_view_map);
 
+    var int_loc_radius = parseInt(loc_radius);
+
   // this passes the info here to a function which prepares a call to function which will use google map api and google places api
-  google.maps.event.addDomListener(window, "load", initialize(type_hol,selected_lat, selected_lng,device_view_map, button_div ,airlines_arr));
+  google.maps.event.addDomListener(window, "load", initialize(type_hol,int_loc_radius, selected_lat, selected_lng,device_view_map, button_div ,airlines_arr));
 
 }
  /*The function is below it to write values in the Booking for to a seperate booking history page  */
