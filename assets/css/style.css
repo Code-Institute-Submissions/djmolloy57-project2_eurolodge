@@ -130,8 +130,52 @@ body{
   #contact_info ul {
     padding-left: 2px;
   }
-}
+  #top_text > h2{
 
+    font-size: 15px;
+  }
+
+  #top_text > h4{
+
+    font-size: 12px;
+    width: 350px !important;  
+    
+  }
+  #top_text > h1{
+    font-size: 15px;
+  }
+  #site_info{
+    font-size: 12px;
+  }
+  .navbar-brand{
+    font-size: 20px ;
+  }
+  .nav-link{
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  #about_info > h4{
+    font-size: 20px;
+
+  }
+  #about_info > p{
+    font-size: 12px;
+
+  }
+  #contact_info > h4{
+    font-size: 20px;
+  }
+  #contact_info > address{
+    font-size: 12px !important; 
+  }
+  #contact_info > strong{
+    font-size: 12px !important; 
+  }
+  #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
+    font-size: 12px;
+  }
+ 
+}
 
   /* iphone 6, 7, 8 Portrait */
   @media only screen
@@ -406,11 +450,11 @@ body{
           margin-bottom: 0;
 
         }
-        h1, h4{
+        /*h1, h4{
           font-size: 98%;
-        }
+        }*/
 
-        #About{
+        /*#About{
           padding-left: 50px
         }
 
@@ -423,7 +467,7 @@ body{
         #Contact{
 
             padding-left: 50px
-        }
+        }*/
         /*add new */
         ul > li {
 
@@ -513,6 +557,51 @@ body{
       #contact_info ul {
         padding-left: 2px;
       }
+      #top_text > h2{
+
+        font-size: 15px;
+      }
+    
+      #top_text > h4{
+    
+        font-size: 12px;
+        width: 350px !important;  
+        
+      }
+      #top_text > h1{
+        font-size: 15px;
+      }
+      #site_info{
+        font-size: 12px;
+      }
+      .navbar-brand{
+        font-size: 20px ;
+      }
+      .nav-link{
+        font-size: 15px;
+        text-transform: uppercase;
+      }
+      #about_info > h4{
+        font-size: 20px;
+    
+      }
+      #about_info > p{
+        font-size: 12px;
+    
+      }
+      #contact_info > h4{
+        font-size: 20px;
+      }
+      #contact_info > address{
+        font-size: 12px !important; 
+      }
+      #contact_info > strong{
+        font-size: 12px !important; 
+      }
+      #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
+        font-size: 12px;
+      }
+     
 
 
     }
