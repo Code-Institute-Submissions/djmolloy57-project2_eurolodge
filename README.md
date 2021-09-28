@@ -111,13 +111,7 @@ I used Google fonts to enhance some text sections of the site. I decided on Robo
 * Links (Internal & External): <br>
   The only external links on the site is Social Media links and they were tested ok.
   
-The following bug was found early on:<br>
-
-fixed code with:
-
-tested and issue was fixed, commited change to github.
-
-Another issue:<br>
+Issue:<br>
 For recording booking I use javascript local storage. In my testing I was checking the form fields as they were being passed to the function which looks after this
 with console logging, it was passing over the values and assigning them to local storage. However it was not showiing in the Booking History menu option page, instead 
 this was showing as blank.
@@ -134,6 +128,33 @@ fixed code with:
      document.getElementById("selected_date").innerHTML=localStorage.getItem("date_value");
     }
 ```
+As part of testing when developing used Chrome Developer tools, alert prompt to check variable status 
+Also test functions like the following to check a radiobutton status when clicked next to a certain country
+```
+ function checkRadioBtnSelected(hol_type){
+    var getSelectedValue = document.querySelector( 'input[name="mapselect"]:checked');
+     if(getSelectedValue != null) {
+          alert("Selected radio button values is: " + getSelectedValue.value);
+    }
+ }
+```
+There is checks what view the site is been viewed on mobile/desktop
+```
+function is_DesktopMap_Div(){
+  //check the device views site is larger than mobile view
+    var query = window.matchMedia("(min-width: 601px)");
+    if (query.matches){
+        return true;
+    }else{
+        return false;
+    }
+  }
+```
+This true false can be used in javascript other function to generate or remove or hide elements/chile nodes.
+
+
+
+
 Ran the website url in responsive design site such as http://ami.responsivedesign.is
 Which shows the site rendering correctly accross different device screens. 
 http://ami.responsivedesign.is/?url=https://djmolloy57.github.io/project2_eurolodge/
@@ -168,18 +189,19 @@ I tested on the websites in the following browsers
  * Safari
 
 ## Remaining issues:
+On Tab A 10.1 top images still veering to the right 
 
 
 ## Testing User Stories
 
-## Validator Testing 
+
 
 # Deployment
 Local git repository was initated in the begining of this project, gitpod and IDE  was used to write the code for this project and regular commits 
 were done throughout the site development and were pushed to remote repository on https://github.com<br>
 My project GitHub repository can be found here:
 
-The site was deployed to GitHub pages.<br> 
+The site was deployed to GitHub pages. https://github.com/djmolloy57/project2_eurolodge/<br> 
 
 Steps to deploy are as follows:<br>
 * In the GitHub repository, navigate to the Settings tab<br>
@@ -190,22 +212,27 @@ with a detailed ribbon  display to indicate the successful deployment.<br>
 To run it on your local machine you can select "clone" which provides an URL you can use to open in the Github Desktop app
 or you can select "download" which downloads the repository zip files on to the local machine.
 
-The live link can be found here:
+The live link can be found here: https://djmolloy57.github.io/project2_eurolodge/
+
+Note for this project you will need the Google Map and Places API which you can get if you signup for google account.
+The google api url is a script url which will be placed at the bottom of the index page alongside the other javascript urls.
 
 # Feature would like:
+  It would be nice to have an api to airlines to get pricing.
 
 # Credits
+
 ## Media
-  * The photos used in this site were obtained from 
-     * The country/city image on the site page are from    
+  * The photos used in this site were obtained from https://pexels.com 
+    
    
 ## Acknowledgements
 
-   * 
+   * Nav menu and Mobile burger menu was heavily borrowed from Code Insitute Whickey Go project.
     
-   *
+   * Got helpful hints on solving issue from https://stackoverflow.com/
 
-   * 
+   
    
    * 
 
