@@ -159,14 +159,15 @@ window.onresize = reportWindowSize;
 
   function remove_old_elements(country_num,div_locpic_num,div_locinfo_num,div_radio_dot_num,div_label_dot_num,div_labelmap_num){
 
-
+    if(typeof(div_locpic_num) != 'string') //check data type 
+    {
 
         country_num.removeChild(div_locpic_num);
         country_num.removeChild(div_locinfo_num);
         country_num.removeChild(div_radio_dot_num);
         country_num.removeChild(div_label_dot_num);
         country_num.removeChild(div_labelmap_num);
-    
+    }
     
     
   }
