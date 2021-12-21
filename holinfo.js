@@ -18,7 +18,7 @@ window.addEventListener("load", function(){
 function reportWindowSize(){
   // on resizing window if in mobile view and generated maps and change to non mobilr view it wont display mobile maps
 
-  let query = window.matchMedia("(min-width: 601px)");
+  var query = window.matchMedia("(min-width: 601px)");
  
   if (query.matches){
         //if the page is wider than 600px
@@ -141,7 +141,7 @@ window.onresize = reportWindowSize;
         if (map_div.children.length > 0){
           var map_children = map_div.children;
 
-          for (let i = 0; i < map_children.length; i++) {
+          for (var i = 0; i < map_children.length; i++) {
 
              if (map_children[i].style.display=='block') {
 
