@@ -23,7 +23,7 @@ function reportWindowSize(){
   if (query.matches){
         //if the page is wider than 600px
 
-        device_view_map = "map_desktop";
+        var device_view_map = "map_desktop";
 
         var mobile_map_frame=[];
         var mobile_btn_frame=[];
@@ -139,13 +139,13 @@ window.onresize = reportWindowSize;
         map_div.style.display = "none";
         var map_div_parent_node = document.getElementById('hol_display').children;
         if (map_div.children.length > 0){
-          map_children = map_div.children;
+          var map_children = map_div.children;
 
           for (let i = 0; i < map_children.length; i++) {
 
              if (map_children[i].style.display=='block') {
 
-               country_id = "country" + map_children[i].id.slice(-1);
+               var country_id = "country" + map_children[i].id.slice(-1);
                map_children[i].style.display = "none";
              }
           }
@@ -178,7 +178,7 @@ window.onresize = reportWindowSize;
    //by function display_country_info() to create dom elements to dispplay on the site page
    //like holiday images and co-ordinates latitute and longtitude to be passed into Google Maps/places api
    //to generate maps and place name markers.
-   data = {
+   var data = {
     "country" : {
       "Andorra": [
           {
@@ -683,7 +683,7 @@ window.onresize = reportWindowSize;
 
            sel_generateMap.appendChild(textgenerateMap);
 
-           lblgenerateMap = document.createElement("label");
+           var lblgenerateMap = document.createElement("label");
            lblgenerateMap.setAttribute('id', 'label_map' + attr_num);
                                           
            
