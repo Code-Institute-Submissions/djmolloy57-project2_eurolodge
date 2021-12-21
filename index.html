@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -24,7 +25,7 @@
               <ul class="navbar-nav mr-auto">
                <!-- Nav links -->
                 <li class="active nav-item mr-2"><a class="nav-link" href="#hero">Home</a></li>
-                <li classs="nav-item mr-2"><a class="nav-link" href="#select_hol">Select Holiday</a></li>
+                <li class="nav-item mr-2"><a class="nav-link" href="#select_hol">Select Holiday</a></li>
                 <li class="nav-item mr-2"><a class="nav-link" href="#about_info">About</a></li>
                 <li class="nav-item mr-2"><a class="nav-link" href="#contact_info">Contact</a></li>
                 <li class="nav-item dropdown">
@@ -84,7 +85,7 @@
           <br>
           <br>
           <br>
-          <label for="country">Choose Holiday type:</label>
+          <label for="hol_btn">Choose Holiday type:</label>
           <select name="hol_picked" id="hol_picked" onchange="enablebutton()">
             <option value="Skiing">Skiing</option>
             <option value="Beach">Beach</option>
@@ -93,7 +94,7 @@
           <button id="hol_btn">Get info</button>
         </div>
         <br>
-        <!-- Based on choice information will placed here by backend  --->
+        <!-- Based on choice information will placed here by backend  -->
         <div class="row" id="hol_display">
             <div id="country1" class="col-md-4 col-lg-4">
             </div>
@@ -140,30 +141,29 @@
       <div class="container py-3" id="footer_size">
         <div class="row">
           <div class="col-lg-3" id="about_info">
-            <h4>About US</h4>
+             <h4>About US</h4>
               <p>This my second project for Code Institute which is designed using <span><strong>html,css,bootstrap and javascript</strong></span></p>
-          </div>
-        <div class="col-lg-3 ml-auto" id="contact_info">
-            <h4>Contact US</h4>
-            <p>
-             <address>Dublin, Ireland</address>
-             <strong>Email: test@test.com</strong> 
-            </p>
-            <ul>
-              <li><a href="https://www.facebook.com" aria-label="link to Facebook" target="_blank"><i
+           </div>
+           <div class="col-lg-3 ml-auto" id="contact_info">
+              <h4>Contact US</h4>
+              <p>Dublin, Ireland</p>
+              <p><strong>Email: test@test.com</strong></p> 
+              <ul>
+                <li><a href="https://www.facebook.com" aria-label="link to Facebook" target="_blank"><i
                        class="fab fa-facebook"></i></a></li>
-               <li><a href="https://www.twitter.com" aria-label="link to Twitter" target="_blank"><i
+                <li><a href="https://www.twitter.com" aria-label="link to Twitter" target="_blank"><i
                        class="fab fa-twitter-square"></i></a></li>
-               <li><a href="https://www.youtube.com" aria-label="link to YouTube" target="_blank"><i
+                <li><a href="https://www.youtube.com" aria-label="link to YouTube" target="_blank"><i
                        class="fab fa-youtube-square"></i></a></li>
 
-           </ul>
+              </ul>
+          </div>
         </div>
-      <div class="container-fluid text-center py-2">
-        &copy, 2020. All rights reservered.
+        <div class="container-fluid text-center py-2">
+          &copy; 2020. All rights reservered.
 
+        </div>
       </div>
-
     </footer>
 
     <!-- Booking Form to select countries hotel/accomdation choice and airline -->
@@ -183,14 +183,14 @@
                    <input type="text" id="formName" required>
                    <br>
                    <label for="resort">Choose Resort:</label>
-                   <select name="hol_picked" id="resort" required>
+                   <select name="hol_picked" id="resort">
                    </select>
                    <br>
                    <label for="hol_date">Date of Departure:</label>
                    <input type="date" id="hol_date" name="hol_date" required>
                    <br>
                    <label for="airlines">Choose Airline:</label>
-                   <select name="airline_picked" id="airlines" style="width: 150px;" required></select>
+                   <select name="airline_picked" id="airlines" style="width: 150px;"></select>
 
                    <br>
                    <input type="submit" class="btn btn-success" value="Submit Booking" onclick="passvalues();">
