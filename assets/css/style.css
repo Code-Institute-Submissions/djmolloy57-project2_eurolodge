@@ -78,6 +78,8 @@ and (orientation: landscape) {
     #hol_display{
       flex-direction: row;
     }
+
+
     p{
         font-size: 0.8em;
         text-align: left;
@@ -368,6 +370,16 @@ and (-webkit-min-device-pixel-ratio: 1) {
     padding-top: 10px;
     margin-bottom: 10px;
   }
+
+  .hol_city{
+    display: none;
+  }
+
+  .hol_image :first-child {
+    width: 300px;
+    height: 150px;
+ }
+
   p{
       font-size: 0.8em;
       text-align: left;
@@ -522,6 +534,17 @@ and (-webkit-min-device-pixel-ratio: 1) {
   #site_info{
       width: 650px;
   }
+  
+  .hol_city{
+    display: none;
+  }
+
+  .hol_image :first-child {
+    width: 500px;
+    height: 350px;
+ }
+
+
   #site_design{
     font-size: 12px;
   }
