@@ -607,7 +607,7 @@ window.onresize = reportWindowSize;
     marker.addListener('click', function(){
       infoWindow.open(map, marker);
   
-      alert('Clicking on marker!!');
+      //alert('Clicking on marker!!');
      });
 
   }
