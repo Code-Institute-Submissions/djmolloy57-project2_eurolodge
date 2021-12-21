@@ -112,18 +112,18 @@ and (orientation: landscape) {
       max-height: 400px;
     }
     #loc_pic1, #loc_pic2, #loc_pic3, #loc_pic4 ,#loc_pic5  {
-      top: -1;
+      top: -1px;
     }
     #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
-      top: 150;
+      top: 150px;
       width: 180px;
       font-size: 12px;
     }
     #radio_dot1,#radio_dot2,#radio_dot3,#radio_dot4,#radio_dot5 {
-      top: 300;
+      top: 300px;
     }
     #label_dot1, #label_dot2, #label_dot3, #label_dot4, #label_dot5 {
-      top: 280;
+      top: 280px;
       padding-left: 0;
       font-size: 12px;
     }
@@ -133,8 +133,8 @@ and (orientation: landscape) {
     }
     img{
       padding-left: 10px;
-      width: 160;
-      height: 120;
+      width: 160px;
+      height: 120px;
     }
     #site_info{
       padding-bottom: 2px;
@@ -402,16 +402,16 @@ and (-webkit-min-device-pixel-ratio: 1) {
     max-height: 400px; 
   }
   #loc_pic1, #loc_pic2, #loc_pic3, #loc_pic4 ,#loc_pic5  {
-    top: -1;
+    top: -1px;
   }
   #loc_info1, #loc_info2, #loc_info3, #loc_info4 ,#loc_info5  {
-    top: 150;
+    top: 150px;
   }
   #radio_dot1,#radio_dot2,#radio_dot3,#radio_dot4,#radio_dot5 {
-    top: 300;
+    top: 300px;
   }
   #label_dot1, #label_dot2, #label_dot3, #label_dot4, #label_dot5 {
-    top: 280;
+    top: 280px;
     padding-left: 0;
   }
 
@@ -420,8 +420,8 @@ and (-webkit-min-device-pixel-ratio: 1) {
   }
   img{
     padding-left: 10px;
-    width: 160;
-    height: 120;
+    width: 160px;
+    height: 120px;
   }
   #site_info{
     padding-bottom: 2px;
